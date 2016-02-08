@@ -9,9 +9,9 @@
 
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <!-- Place favicon.ico in the root directory -->
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/buttons-min.css">
-  <script type="text/javascript" src="http://fast.fonts.net/jsapi/e3855c23-bf23-48e5-a10c-0e1d246fb74c.js" async></script>
+  <script type="text/javascript" src="https://fast.fonts.net/jsapi/e3855c23-bf23-48e5-a10c-0e1d246fb74c.js" async></script>
 
   <!-- build:css styles/vendor.css -->
   <!-- bower:css -->
@@ -44,31 +44,49 @@
 
 <body>
 
-  <video autoplay loop poster="bg.jpg" id="bgvid">
-    <!-- <source src="videos/bg.webm" type="video/webm"> -->
-    <source src="videos/bg_dark.mp4" type="video/mp4">
-  </video>
-
-  <div class="pure-g">
-    <div class="pure-u-1">
+<div class="container-fluid fullpage">
+  <div class="row">
+    <div class="col-sm-12">
+      <video autoplay loop poster="bg.jpg" id="bgvid">
+        <!-- <source src="videos/bg.webm" type="video/webm"> -->
+        <source src="videos/bg_dark.mp4" type="video/mp4">
+      </video>
       <img src="https://d1e6a3jvdxo3ln.cloudfront.net/images/website/techhub_3d_logo_png.png" alt="TechHub logo" class="logo-home">
       <div class="jumbo">
         <h1 class="main-title">The global community
-          <br>for technology startups</h1>
+            <br>for technology startups</h1>
         <h2 class="sub-title">Online and physical places where startups can work,
-          <br class="show-lg">meet, collaborate, network, learn and have fun</h2>
+            <br class="show-lg">meet, collaborate, network, learn and have fun</h2>
         <div class="home-cta">
           <a href="#" class="pure-button btn-home-cta">Join the Community</a>
           <a href="#" class="pure-button btn-home-cta">Attend our Events</a>
         </div>
       </div>
+
+      <div class="wrapper-gfe" style="opacity:1;">
+        <div class="text-gfe"> Global Partner</div>
+        <img src="images/gfe.png" alt="Google for Entrepreneurs" class="logo-gfe" width="289">
+      </div>
     </div>
   </div>
+</div>
 
-  <div class="wrapper-gfe" style="opacity: 1;">
-    <div class="text-gfe"> Global Partner</div>
-    <img src="images/gfe.png" alt="Google for Entrepreneurs" class="logo-gfe" width="289">
+<section class="section-big">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="box">
+          <h2>We help startups grow better, faster.</h2>
+          <p>TechHub is a unique environment where technology startups can start up faster.
+            <br>We nurture an international network of like-minded and focused tech entrepreneurs, providing places where they can work, meet, collaborate, network, learn and have fun. By getting the right people together in a physical space, good things happen.</p>
+        </div>
+      </div>
+      <div class="col-sm-6">
+          <div class="map-bg"></div>
+      </div>
+    </div>
   </div>
+</section>
 
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

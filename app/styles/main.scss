@@ -1,0 +1,94 @@
+// bower:scss
+// endbower
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #000;
+}
+.show-lg {
+  display: none;
+  @media screen and (min-width: 35em) {
+    display: block;
+  }
+}
+video#bgvid {
+  display: none;
+  @media screen and (min-width: 35em) {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background: url(bg.jpg) no-repeat;
+    background-size: cover;
+  }
+}
+.logo-home {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  width: 150px;
+  margin-left: -75px;
+  @media screen and (min-width: 35em) {
+    top: 10%;
+    width: 250px;
+    margin-left: -125px;
+  }
+}
+.jumbo {
+  text-align: center;
+  margin-top: 120px;
+  padding: 15px;
+  color: #f2f2f2;
+  .main-title {
+    font-family: 'Rockwell W02', sans-serif;
+    letter-spacing: 1px;
+    font-size: 1.7em;
+    line-height: 1.25em;
+  }
+  .sub-title {
+    font-family: 'Rockwell W02', sans-serif;
+    font-size: 1.2em;
+    line-height: 1em;
+  }
+  @media screen and (min-width: 35em) {
+    margin-top: 200px;
+    .main-title {
+      letter-spacing: 1px;
+      font-size: 2.5em;
+      line-height: 1.25em;
+    }
+    .sub-title {
+      letter-spacing: 0.5px;
+      font-size: 1.65em;
+      line-height: 1.2em;
+    }
+  }
+}
+.wrapper-gfe {
+  position: absolute;
+  bottom: 30px;
+  left: 50px;
+  width: 290px;
+  height: auto;
+  opacity: 0;
+}
+.wrapper-gfe .text-gfe {
+  text-align: center;
+  color: #fff;
+  font-weight: 300;
+  font-size: 0.85em;
+  margin-bottom: 5px;
+}
+.btn-home-cta {
+  background-color: #f7af3f;
+  border-radius: 0;
+  font-size: 120%;
+  @media screen and (min-width: 35em) {
+    margin: 25px 10px;
+  }
+}

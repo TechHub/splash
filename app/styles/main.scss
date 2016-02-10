@@ -1,7 +1,9 @@
 // bower:scss
 // endbower
+$techhub: #f9b233;
 body {
   font-family: 'Source Sans Pro', sans-serif;
+  font-size: 15px;
   background-color: #111;
 }
 .show-lg {
@@ -9,6 +11,47 @@ body {
   @media screen and (min-width: 35em) {
     display: block;
   }
+}
+.is-th-font {
+  font-family: 'Rockwell W02', sans-serif;
+  letter-spacing: 1px;
+}
+.title-home {
+  color: #fff;
+  font-weight: bold;
+  @media screen and (min-width: 35em) {
+    font-size: 3em;
+    padding-bottom: 5px;
+  }
+}
+.subtitle-home {
+  color: #fff;
+  font-size: 1.4em;
+}
+.hero-home {
+  z-index: 2;
+}
+.header-item.is-dark-bg {
+  & a {
+    color: #fff;
+  }
+  .button.is-techhub {
+    background: $techhub;
+    border-color: transparent;
+    color: #111;
+    border-radius: 3px;
+    &:hover {
+      background: darken($techhub, 10);
+    }
+  }
+}
+.header .container-header {
+    align-items: stretch;
+    box-shadow: none;
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    margin-right: 20px;
 }
 video#bgvid {
   display: none;
@@ -21,84 +64,60 @@ video#bgvid {
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -100;
+    z-index: 1;
     transform: translateX(-50%) translateY(-50%);
-    background: url(bg.jpg) no-repeat;
+    background: url("bg.jpg") no-repeat;
     background-size: cover;
   }
 }
 .logo-home {
-  position: absolute;
-  left: 50%;
-  top: 10%;
-  width: 150px;
-  margin-left: -75px;
-  @media screen and (min-width: 35em) {
-    top: 10%;
-    width: 250px;
-    margin-left: -125px;
-  }
-}
-.jumbo {
-  text-align: center;
-  margin-top: 120px;
-  padding: 15px;
-  color: #f2f2f2;
-  .main-title {
-    font-family: 'Rockwell W02', sans-serif;
-    letter-spacing: 1px;
-    font-size: 1.7em;
-    line-height: 1.25em;
-  }
-  .sub-title {
-    font-family: 'Rockwell W02', sans-serif;
-    font-size: 1.2em;
-    line-height: 1em;
-  }
-  @media screen and (min-width: 35em) {
-    margin-top: 200px;
-    .main-title {
-      letter-spacing: 1px;
-      font-size: 2.5em;
-      line-height: 1.25em;
-    }
-    .sub-title {
-      letter-spacing: 0.5px;
-      font-size: 1.65em;
-      line-height: 1.2em;
-    }
-  }
+  max-width: 200px;
+  margin-bottom: 20px;
 }
 .wrapper-gfe {
-  position: absolute;
-  bottom: 30px;
-  left: 50px;
-  width: 290px;
-  height: auto;
-  opacity: 0;
-}
-.wrapper-gfe .text-gfe {
-  text-align: center;
   color: #fff;
-  font-weight: 300;
-  font-size: 0.85em;
-  margin-bottom: 5px;
-}
-.btn-home-cta {
-  background-color: #f7af3f;
-  border-radius: 0;
-  font-size: 120%;
-  @media screen and (min-width: 35em) {
-    margin: 25px 10px;
+  text-transform: uppercase;
+  .text-gfe {
+    text-align: center;
+    color: #fff;
+    font-weight: 300;
+    font-size: 0.85em;
+    margin-bottom: 3px;
+  }
+  .logo-gfe {
+    max-width: 289px;
+  }
+  a {
+    padding: 0;
   }
 }
-.fullpage {
-  height: 100vh;
+.is-home-cta {
+  background-color: #f7af3f;
+  border-radius: 0;
+  border: 0;
+  font-size: 120%;
+  font-weight: bold;
+  text-transform: uppercase;
+  @media screen and (min-width: 35em) {
+    margin: 20px 10px;
+  }
 }
-.box {
-  padding: 25px;
+.tabs.tabs-home a {
+  color: #fff;
+  &:hover {
+    color: $techhub;
+  }
 }
-section {
+// footer
+.list {
+  li {
+    list-style: none;
+    a {
+      border: 0;
+    }
+  }
+}
+.section {
   background-color: #eee;
 }
 .map-bg {

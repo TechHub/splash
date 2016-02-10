@@ -9,13 +9,11 @@
 
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <!-- Place favicon.ico in the root directory -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/buttons-min.css">
   <script type="text/javascript" src="https://fast.fonts.net/jsapi/e3855c23-bf23-48e5-a10c-0e1d246fb74c.js" async></script>
 
   <!-- build:css styles/vendor.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="/bower_components/flexboxgrid/dist/flexboxgrid.css" />
+  <link rel="stylesheet" href="/bower_components/bulma/css/bulma.css" />
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -44,49 +42,135 @@
 
 <body>
 
-<div class="container-fluid fullpage">
-  <div class="row">
-    <div class="col-sm-12">
-      <video autoplay loop poster="bg.jpg" id="bgvid">
-        <!-- <source src="videos/bg.webm" type="video/webm"> -->
-        <source src="videos/bg_dark.mp4" type="video/mp4">
-      </video>
-      <img src="https://d1e6a3jvdxo3ln.cloudfront.net/images/website/techhub_3d_logo_png.png" alt="TechHub logo" class="logo-home">
-      <div class="jumbo">
-        <h1 class="main-title">The global community
-            <br>for technology startups</h1>
-        <h2 class="sub-title">Online and physical places where startups can work,
-            <br class="show-lg">meet, collaborate, network, learn and have fun</h2>
-        <div class="home-cta">
-          <a href="#" class="pure-button btn-home-cta">Join the Community</a>
-          <a href="#" class="pure-button btn-home-cta">Attend our Events</a>
+  <section class="hero is-fullheight">
+    <div class="hero-header hero-home">
+      <header class="header">
+        <div class="container container-header">
+          <div class="header-left">
+            <!-- <span class="header-item is-dark-bg">
+            <a class="is-active" href="#">Home</a></span> -->
+          </div>
+          <div class="header-center">
+          </div>
+          <span class="header-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+          </span>
+          <div class="header-right header-menu">
+            <span class="header-item is-dark-bg">
+            <a href="#">Memberships</a>
+          </span>
+            <span class="header-item is-dark-bg">
+            <a href="#">Events</a>
+          </span>
+            <span class="header-item is-dark-bg">
+            <a href="#">Blog</a>
+          </span>
+            <span class="header-item is-dark-bg">
+            <a class="button is-techhub">
+              Contact us
+            </a>
+          </span>
+          </div>
         </div>
-      </div>
+      </header>
+    </div>
 
-      <div class="wrapper-gfe" style="opacity:1;">
-        <div class="text-gfe"> Global Partner</div>
-        <img src="images/gfe.png" alt="Google for Entrepreneurs" class="logo-gfe" width="289">
+    <video autoplay loop poster="bg.jpg" id="bgvid">
+      <source src="videos/bg_dark.mp4" type="video/mp4">
+    </video>
+
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-content hero-home">
+      <div class="container">
+        <img src="https://d1e6a3jvdxo3ln.cloudfront.net/images/website/techhub_3d_logo_png.png" alt="Logo" class="logo-home">
+        <h1 class="title title-home is-th-font">
+        The global community
+        <br class="is-hidden-mobile">for technology startups
+      </h1>
+        <!-- <h2 class="subtitle subtitle-home">
+        Online and physical places where startups can work,
+        <br>meet, collaborate, network, learn and have fun
+      </h2> -->
+        <a href="#" class="button is-home-cta is-medium">Join the Community</a>
+        <a href="#" class="button is-home-cta is-medium">Attend our Events</a>
       </div>
     </div>
-  </div>
-</div>
 
-<section class="section-big">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="box">
-          <h2>We help startups grow better, faster.</h2>
-          <p>TechHub is a unique environment where technology startups can start up faster.
-            <br>We nurture an international network of like-minded and focused tech entrepreneurs, providing places where they can work, meet, collaborate, network, learn and have fun. By getting the right people together in a physical space, good things happen.</p>
+    <!-- Hero footer: will stick at the bottom -->
+    <div class="hero-footer hero-home">
+      <div class="is-centered">
+        <div class="wrapper-gfe">
+          <div class="text-gfe">Global Partner</div>
+          <a href="https://www.googleforentrepreneurs.com"><img src="images/gfe.png" alt="Google for Entrepreneurs" class="logo-gfe"></a>
         </div>
       </div>
-      <div class="col-sm-6">
-          <div class="map-bg"></div>
+      <nav class="tabs is-centered tabs-home">
+        <div class="container is-centered">
+          <ul>
+            <li><a href="#">Bangalore</a></li>
+            <li><a href="#">Bucharest</a></li>
+            <li><a href="#">London</a></li>
+            <li><a href="#">Madrid</a></li>
+            <li><a href="#">Riga</a></li>
+            <li><a href="#">Swansea</a></li>
+            <li><a href="#">Warsaw</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  <!-- <section class="section-big">
+    <div class="col-sm-6">
+      <div class="box">
+        <h2>We help startups grow better, faster.</h2>
+        <p>TechHub is a unique environment where technology startups can start up faster.
+          <br>We nurture an international network of like-minded and focused tech entrepreneurs, providing places where they can work, meet, collaborate, network, learn and have fun. By getting the right people together in a physical space, good things happen.</p>
       </div>
     </div>
-  </div>
-</section>
+    <div class="col-sm-6">
+      <div class="map-bg"></div>
+    </div>
+  </section> -->
+
+
+  <footer class="footer">
+    <div class="columns">
+      <div class="column">
+        <ul class="list">
+          <li><a href="#">Bangalore</a></li>
+          <li><a href="#">Bucharest</a></li>
+          <li><a href="#">London</a></li>
+          <li><a href="#">Madrid</a></li>
+          <li><a href="#">Riga</a></li>
+          <li><a href="#">Swansea</a></li>
+          <li><a href="#">Warsaw</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <ul class="list">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Jobs</a></li>
+          <li><a href="#">Riga</a></li>
+          <li><a href="#">Swansea</a></li>
+          <li><a href="#">Warsaw</a></li>
+        </ul>
+      </div>
+      <div class="column">
+
+      </div>
+      <div class="column">
+        TechHub
+        <br>4-5 Bonhill Street
+        <br>EC2 4BX
+        <br>London
+      </div>
+    </div>
+  </footer>
 
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

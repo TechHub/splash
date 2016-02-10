@@ -2,7 +2,8 @@
   "name": "splash",
   "private": true,
   "dependencies": {
-    "flexboxgrid": "~6.3.0"
+    "flexboxgrid": "~6.3.0",
+    "bulma": "^0.0.11"
   },
   "devDependencies": {
     "chai": "~3.4.2",

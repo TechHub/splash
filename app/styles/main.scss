@@ -1,9 +1,19 @@
 // bower:scss
 // endbower
+
+@import "../../bower_components/bulma/bulma/utilities/utilities";
+@import "../../bower_components/bulma/bulma/config/variables";
+@import "../../bower_components/bulma/bulma/config/generated-variables";
+@import "../../bower_components/bulma/bulma/base/base";
+@import "../../bower_components/bulma/bulma/elements/elements";
+@import "../../bower_components/bulma/bulma/components/components";
+@import "../../bower_components/bulma/bulma/layout/layout";
+
 $techhub: #f9b233;
+
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   background-color: #111;
 }
 .show-lg {
@@ -15,6 +25,10 @@ body {
 .is-th-font {
   font-family: 'Rockwell W02', sans-serif;
   letter-spacing: 1px;
+}
+.is-fluid {
+  max-width: 100%;
+  padding: 0 20px;
 }
 .title-home {
   color: #fff;
@@ -34,6 +48,9 @@ body {
 .header-item.is-dark-bg {
   & a {
     color: #fff;
+    &:hover {
+      color: $techhub;
+    }
   }
   .button.is-techhub {
     background: $techhub;
@@ -108,6 +125,29 @@ video#bgvid {
     color: $techhub;
   }
 }
+
+.message-header-membership {
+    background: #69707a;
+    border-radius: 3px 3px 0 0;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 12px 8px;
+    text-transform: uppercase;
+}
+.message-image {
+  border-left: 1px solid #d3d6db;
+  border-right: 1px solid #d3d6db;
+}
+
+.hero.is-primary.is-bold {
+    background-image: linear-gradient(141deg, #333 0%, $techhub 71%, $techhub 100%);
+}
+
+.navbar.navbar-stats .heading {
+  font-size: 14px;
+}
 // footer
 .list {
   li {
@@ -116,6 +156,9 @@ video#bgvid {
       border: 0;
     }
   }
+}
+.small-padding-bottom {
+  padding-bottom: 20px;
 }
 .section {
   background-color: #eee;

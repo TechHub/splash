@@ -2,11 +2,17 @@
   "name": "splash",
   "private": true,
   "dependencies": {
-    "flexboxgrid": "~6.3.0",
-    "bulma": "^0.0.11"
+    "bulma": "^0.0.12"
   },
   "devDependencies": {
     "chai": "~3.4.2",
     "mocha": "~2.3.4"
+  },
+  "overrides": {
+    "bulma": {
+      "main": [
+        "./css/bulma.css"
+      ]
+    }
   }
 }

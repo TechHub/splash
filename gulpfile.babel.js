@@ -4,14 +4,20 @@ import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
 import del from 'del';
 import {stream as wiredep} from 'wiredep';
+import fs from 'fs';
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
-// const awsConfig = JSON.parse(fs.readFileSync('./awsConfig.json'));
-// const headers = {
-//   'Cache-Control': 'max-age=315360000, no-transform, public'
-// };
+const awsConfig = JSON.parse(fs.readFileSync('./awsConfig.json'));
+
+const publisher = $.awspublish.create({
+    'params': {
+      'Bucket': 'th-splash',
+    },
+    'accessKeyId': awsConfig.key,
+    'secretAccessKey': awsConfig.secret
+  });
 
 gulp.task('styles', () => {
   return gulp.src('app/styles/*.scss')
@@ -162,13 +168,6 @@ gulp.task('serve:test', ['scripts'], () => {
 });
 
 gulp.task('deploy', ['build'], () => {
-  // create a new publisher
-  const publisher = $.awspublish.create({
-    key: '',
-    secret: '',
-    bucket: ''
-  });
-
   // define custom headers
   const headers = {
     'Cache-Control': 'max-age=315360000, no-transform, public'

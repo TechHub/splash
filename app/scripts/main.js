@@ -1,5 +1,5 @@
 (function() {
-
+  'use strict';
   // same height membership columns
   var membershipColumns = document.querySelectorAll('.same-height .message-body');
   var membershipColumnsMaxHeight = 0;

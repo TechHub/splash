@@ -10,8 +10,8 @@ $primary: #f9b233;
 @import "../../bower_components/bulma/bulma/components/components";
 @import "../../bower_components/bulma/bulma/layout/layout";
 body {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 17px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
   background-color: #111;
 }
 .is-th-font {
@@ -148,6 +148,19 @@ video#bgvid {
     }
   }
 }
+// alumni & members
+.carousel.carousel-members {
+  .card {
+    margin: 30px;
+  }
+  .image {
+    height: 64px;
+  }
+}
+.slick-prev:before, .slick-next:before {
+    color: #333;
+}
+
 // membership
 .message.message-membership {
   .message-header {
@@ -182,6 +195,12 @@ video#bgvid {
       border: 0;
     }
   }
+}
+.footer ul {
+  border-bottom: none;
+}
+.footer .columns {
+  padding-bottom: 0px;
 }
 .footer a:not(.icon) {
   border: 0;

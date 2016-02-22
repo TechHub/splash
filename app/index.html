@@ -10,13 +10,11 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <!-- Place favicon.ico in the root directory -->
   <!-- <script type="text/javascript" src="https://fast.fonts.net/jsapi/e3855c23-bf23-48e5-a10c-0e1d246fb74c.js" async></script> -->
-  <link type="text/css" rel="stylesheet" href="http://fast.fonts.net/cssapi/e3855c23-bf23-48e5-a10c-0e1d246fb74c.css"/>
+  <link type="text/css" rel="stylesheet" href="http://fast.fonts.net/cssapi/e3855c23-bf23-48e5-a10c-0e1d246fb74c.css" />
 
   <!-- build:css styles/vendor.css -->
   <!-- bower:css -->
   <link rel="stylesheet" href="/bower_components/bulma/css/bulma.css" />
-  <link rel="stylesheet" href="/bower_components/slick-carousel/slick/slick.css" />
-  <link rel="stylesheet" href="/bower_components/slick-carousel/slick/slick-theme.css" />
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -27,7 +25,7 @@
   <script type="text/javascript">
     WebFontConfig = {
       google: {
-        families: ['Roboto:400,700:latin']
+        families: ['Roboto:400,500,700:latin']
       }
     };
     (function() {
@@ -80,9 +78,11 @@
       </header>
     </div>
 
-    <video autoplay loop poster="bg.jpg" id="bgvid">
-      <source src="videos/bg_dark.mp4" type="video/mp4">
-    </video>
+    <div class="covervid-wrapper">
+      <video class="covervid-video" autoplay loop poster="img/video-fallback.png">
+        <source src="videos/bg_dark.mp4" type="video/mp4">
+      </video>
+    </div>
 
     <!-- Hero content: will be in the middle -->
     <div class="hero-content hero-home">
@@ -149,25 +149,25 @@
   <section class="section is-paddingless">
     <!-- <h2 class="title is-text-centered">We help startups grow better, faster</h2> -->
     <div class="columns columns-minimal-border">
-      <div class="column full-bg full-bg-1">
+      <div class="column full-bg full-bg-global-community">
         <div class="full-bg-text">
           <h3 class="title">
             Global Community
-          </h3> TechHub is the global community for technology entrepreneurs and startups (from early stage to high growth). We work with over 700 companies around the world to help them scale.
+          </h3> TechHub is the global community for technology entrepreneurs and startups. We work with over 700 companies around the world to help them scale.
         </div>
       </div>
-      <div class="column full-bg full-bg-2">
+      <div class="column full-bg full-bg-flex-space">
         <div class="full-bg-text">
           <h3 class="title">
             Flexible work space
           </h3>The TechHub network enables members to work smarter, develop faster and increase their chances of startup success.
         </div>
       </div>
-      <div class="column full-bg full-bg-1">
+      <div class="column full-bg full-bg-events">
         <div class="full-bg-text">
           <h3 class="title">
             Events
-          </h3> TechHub is one community with programmes and spaces in London, Swansea, Riga, Bucharest, Bangalore, Madrid and Warsaw where we help startups go global.
+          </h3> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum amet porro sed cupiditate numquam quidem dolores at voluptatum, maxime recusandae.
         </div>
       </div>
     </div>
@@ -213,7 +213,7 @@
               </div>
 
               <div class="content">
-                Reinventing communication by providing innovaative APIs that enables businesses to easily connect to their customers via voice and SMS. Started with a team of 2 at TechHub and outgrew to 60+ over 3 years.
+                Reinventing communication. Started with a team of 2 at TechHub and outgrew to 60+ over 3 years.
               </div>
             </div>
           </div>
@@ -232,7 +232,7 @@
               </div>
 
               <div class="content">
-                Also known as Google’s $120M acquisition, Divide is giving people the best mobile experience at work, by building a mobile productivity app that allows employees to carry one device instead of two.
+                Divide is giving people the best mobile experience at work. Some more text here please.
               </div>
             </div>
           </div>
@@ -270,7 +270,7 @@
               </div>
 
               <div class="content">
-                Royalty-free soundtracks at the tap of your finger. Started at TechHub when there was only the CEO and grew to over 15 people on the team.
+                Royalty-free soundtracks. Started at TechHub when there was only the CEO and grew to over 15 people on the team.
               </div>
             </div>
           </div>
@@ -282,7 +282,37 @@
     </div>
   </section>
 
-  <section class="section small-padding">
+  <section class="section is-paddingless">
+    <h2 class="title is-text-centered">Memberships</h2>
+    <div class="columns columns-minimal-border">
+      <div class="column full-bg full-bg-flex">
+        <div class="full-bg-text">
+          <h3 class="title">
+            Flex
+          </h3> Lonely Founder? Working from home? Join the community and drop-in whenever you're around!
+        </div>
+      </div>
+      <div class="column full-bg full-bg-resident">
+        <div class="full-bg-text">
+          <h3 class="title">
+            Resident
+          </h3>Your own desk in our open plan resident area! 24/7 access for individuals and teams.
+        </div>
+      </div>
+      <div class="column full-bg full-bg-team">
+        <div class="full-bg-text">
+          <h3 class="title">
+            Team
+          </h3> Your very own private space. Stay within the community as you grow. Teams of 4 or more.
+        </div>
+      </div>
+    </div>
+    <!-- <div class="is-text-centered">
+      <a href="#" class="button is-medium">Discover more and check availability in our locations</a>
+    </div> -->
+  </section>
+
+  <!-- <section class="section small-padding">
     <div class="container">
       <h2 class="title is-text-centered title-section">Memberships</h2>
       <div class="columns same-height">
@@ -318,10 +348,10 @@
         </div>
       </div>
       <div class="content is-text-centered">
-        <a href="#" class="button is-medium">Discover more about our memberships</a>
+        <a href="#" class="button is-medium">Discover more and check availability in our locations</a>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <section id="newsletter" class="hero is-primary is-bold">
     <div class="hero-content">
@@ -382,7 +412,8 @@
   <!-- build:js scripts/vendor.js -->
   <!-- bower:js -->
   <script src="/bower_components/jquery/dist/jquery.js"></script>
-  <script src="/bower_components/slick-carousel/slick/slick.min.js"></script>
+  <script src="/bower_components/slick-carousel/slick/slick.js"></script>
+  <script src="/bower_components/covervid/covervid.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 

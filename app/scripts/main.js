@@ -1,5 +1,20 @@
 (function($) {
   'use strict';
+
+  $('.covervid-video').coverVid(1280, 720);
+
+  function fullscreen() {
+    var fullpage = $('.hero.is-fullheight');
+    var windowH = $(window).height();
+    var windowW = $(window).width();
+
+    fullpage.width(windowW);
+    fullpage.height(windowH);
+  }
+
+  fullscreen();
+  $(window).resize(fullscreen);
+
   // same height membership columns
   var membershipColumns = document.querySelectorAll('.same-height .message-body');
   var membershipColumnsMaxHeight = 0;

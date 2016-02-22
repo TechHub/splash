@@ -147,11 +147,11 @@ body {
     background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)),url('../images/map2.png');
   }
   &.full-bg-flex-space {
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url('https://d38pst8wrxen9j.cloudfront.net/2016/Feb/DSC_0837-1454933480847.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, .35), rgba(0, 0, 0, 0.9)), url('../images/bg_space.jpg');
     background-position: center;
   }
   &.full-bg-events {
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .2), rgba(0, 0, 0, 0.8)), url('../images/bg_events.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .35), rgba(0, 0, 0, 0.9)), url('../images/bg_events2.jpg');
     background-position: center;
   }
   &.full-bg-flex {

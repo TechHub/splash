@@ -80,7 +80,7 @@ body {
     height: 100vh;
     z-index: 1;
     transform: translateX(-50%) translateY(-50%);
-    background: url("bg.jpg") no-repeat;
+    background: url("bg_fallback.jpg") no-repeat;
     background-size: cover;
   }
 }
@@ -233,6 +233,13 @@ body {
   font-weight: bold;
   text-decoration: none;
 }
+.footer-icons .icon {
+  height: 28px;
+  width: 28px;
+  margin-right: 10px;
+  font-size: 28px;
+}
+// other
 .small-padding-bottom {
   padding-top: 30px;
   padding-bottom: 30px;

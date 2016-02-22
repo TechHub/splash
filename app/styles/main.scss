@@ -126,9 +126,18 @@ body {
 }
 // we help startups grow better, faster
 .columns.columns-minimal-border {
-  margin: 0 10px;
-  .column:not(:last-child) {
-    margin-right: 10px;
+  margin: 10px 10px;
+  .column {
+    margin-bottom: 10px;
+  }
+  @media screen and (min-width: 35em) {
+    margin: 0 10px;
+    .column {
+      margin-bottom: 0;
+    }
+    .column:not(:last-child) {
+      margin-right: 10px;
+    }
   }
 }
 .full-bg {

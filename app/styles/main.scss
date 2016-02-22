@@ -137,8 +137,14 @@ body {
   min-height: 350px;
   background-repeat: no-repeat;
   background-size: cover;
+  cursor: pointer;
+  &:hover {
+    h3.title {
+      color: $techhub;
+    }
+  }
   &.full-bg-global-community {
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)),url('https://d38pst8wrxen9j.cloudfront.net/2015/Sep/IMG_7711_2-1442574675798.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)),url('../images/map2.png');
   }
   &.full-bg-flex-space {
     background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url('https://d38pst8wrxen9j.cloudfront.net/2016/Feb/DSC_0837-1454933480847.jpg');
@@ -149,11 +155,11 @@ body {
     background-position: center;
   }
   &.full-bg-flex {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.95)), url('../images/bg_flex.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.95)), url('../images/bg_flex2.jpg');
     background-position: center;
   }
   &.full-bg-resident {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.95)), url('../images/bg_resident.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.95)), url('../images/bg_resident2.jpg');
     background-position: center;
   }
   &.full-bg-team {
@@ -174,6 +180,7 @@ body {
 }
 // alumni & members
 .carousel.carousel-members {
+  margin-bottom: 10px;
   .card {
     margin: 1px 30px;
   }
@@ -240,6 +247,11 @@ body {
   font-size: 28px;
 }
 // other
+.img-partners {
+  max-width: 500px;
+  margin: 0 auto;
+  display: block;
+}
 .small-padding-bottom {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -251,6 +263,30 @@ body {
   }
   &.small-padding {
     padding: 25px 0;
+  }
+  &.section-partners {
+    background-color: #F5F7FA;
+    border-bottom: 1px solid rgba(211, 214, 219, 0.5);
+    h2 {
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+    .image {
+      margin: 0 20px;
+      display: inline-block;
+    }
+    .img-logo-gfe {
+      margin-top: 15px;
+      margin-bottom: 10px;
+      max-width: 370px;
+    }
+    .img-logo-bt {
+      margin-bottom: 10px;
+      max-width: 120px;
+      @media screen and (min-width: 35em) {
+        // margin-left: 0px;
+      }
+    }
   }
 }
 .map-bg {

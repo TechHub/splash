@@ -2,9 +2,11 @@
   "name": "splash",
   "private": true,
   "dependencies": {
-    "bulma": "^0.0.14",
+    "bulma": "^0.0.15",
     "slick-carousel": "^1.5.9",
-    "covervid": "*"
+    "covervid": "*",
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
   },
   "devDependencies": {
     "chai": "~3.4.2",

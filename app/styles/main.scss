@@ -38,6 +38,12 @@ body {
 .hero-home {
   z-index: 2;
 }
+.header-toggle {
+  margin-top: 10px;
+  border: 2px solid #555;
+  width: 45px;
+  height: 45px;
+}
 .header-item.is-dark-bg {
   & a {
     color: #fff;
@@ -111,6 +117,7 @@ body {
   border: 0;
   font-weight: 500;
   text-transform: uppercase;
+  margin: 10px 0;
   @media screen and (min-width: 35em) {
     margin: 20px 10px;
   }
@@ -126,7 +133,7 @@ body {
 }
 // we help startups grow better, faster
 .columns.columns-minimal-border {
-  margin: 10px 10px;
+  margin: 10px;
   .column {
     margin-bottom: 10px;
   }
@@ -196,10 +203,23 @@ body {
   .image {
     height: 64px;
   }
-}
-.slick-prev:before,
-.slick-next:before {
-  color: #333;
+  .slick-prev:before,
+  .slick-next:before {
+    color: #333;
+  }
+  .slick-prev {
+    z-index: 100;
+    left: 3px;
+    @media screen and (min-width: 35em) {
+      left: -25px;
+    }
+  }
+  .slick-next {
+    right: 3px;
+    @media screen and (min-width: 35em) {
+      right: -25px;
+    }
+  }
 }
 // membership
 .message.message-membership {
@@ -218,8 +238,16 @@ body {
   background-image: linear-gradient(141deg, #111 0%, #444 61%, #222 100%);
 }
 // stats
-.navbar.navbar-stats .heading {
-  font-size: 14px;
+.navbar.navbar-stats {
+  .heading {
+    font-size: 14px;
+  }
+  .navbar-item {
+    margin-bottom: 30px;
+    @media screen and (min-width: 35em) {
+      margin-bottom: 0;
+    }
+  }
 }
 .button.is-primary {
   color: #222;
@@ -268,7 +296,10 @@ body {
 .section {
   background-color: #eee;
   &.is-paddingless {
-    padding: 10px 0;
+    padding: 1px 0;
+    @media screen and (min-width: 35em) {
+      padding: 10px 0;
+    }
   }
   &.small-padding {
     padding: 25px 0;
@@ -287,7 +318,10 @@ body {
     .img-logo-gfe {
       margin-top: 15px;
       margin-bottom: 10px;
-      max-width: 370px;
+      max-width: 80%;
+      @media screen and (min-width: 35em) {
+        max-width: 370px;
+      }
     }
     .img-logo-bt {
       margin-bottom: 10px;

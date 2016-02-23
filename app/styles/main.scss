@@ -15,6 +15,7 @@ $family-sans-serif: "Roboto", "Helvetica", "Arial", sans-serif;
 @import "../../bower_components/slick-carousel/slick/slick.scss";
 $slick-font-path: "../fonts/" !default;
 @import "../../bower_components/slick-carousel/slick/slick-theme.scss";
+@import "hamburger.scss";
 // avoid FOUC
 .wf-loading {
   @media screen and (min-width: 35em) {
@@ -55,7 +56,7 @@ body {
   font-size: 1.4em;
 }
 .hero-home {
-  z-index: 2;
+  z-index: 1;
 }
 .header-toggle {
   position: fixed;
@@ -127,8 +128,12 @@ body {
 }
 .wrapper-gfe {
   color: #fff;
-  text-transform: uppercase;
+  margin-bottom: 80px;
+  @media screen and (min-width: 35em) {
+    margin-bottom: 0;
+  }
   .text-gfe {
+    text-transform: uppercase;
     text-align: center;
     color: #fff;
     font-weight: 300;
@@ -137,7 +142,6 @@ body {
   }
   .logo-gfe {
     max-width: 289px;
-    margin-bottom: 10px;
     @media screen and (min-width: 35em) {
       margin-bottom: 0;
     }

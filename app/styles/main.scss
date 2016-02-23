@@ -14,6 +14,17 @@ $radius: 0;
 @import "../../bower_components/slick-carousel/slick/slick.scss";
 $slick-font-path: "../fonts/" !default;
 @import "../../bower_components/slick-carousel/slick/slick-theme.scss";
+// avoid FOUC
+.wf-loading {
+  @media screen and (min-width: 35em) {
+    .title.title-home,
+    .is-home-cta,
+    .header-right.header-menu,
+    .tabs-home {
+      visibility: hidden;
+    }
+  }
+}
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
@@ -31,9 +42,12 @@ body {
     padding-bottom: 5px;
   }
 }
-.hero.is-fullheight.hero-home{
+.hero.is-fullheight.hero-home {
   background-color: #000;
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, .9)),url('../images/bg_mobile.jpg');
+  @media screen and (min-width: 35em) {
+    background: #000;
+  }
 }
 .subtitle-home {
   color: #fff;

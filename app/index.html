@@ -8,6 +8,22 @@
   <title>TechHub - The Global Community for Technology Startups</title>
 
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <script type="text/javascript">
+    WebFontConfig = {
+      google: {
+        families: ['Roboto:400,500,700:latin']
+      },
+      custom: {
+        families: ['Rockwell W02'],
+        urls: ['https://fast.fonts.net/cssapi/e3855c23-bf23-48e5-a10c-0e1d246fb74c.css']
+      }
+    };
+    (function(d) {
+       var wf = d.createElement('script'), s = d.scripts[0];
+       wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js';
+       s.parentNode.insertBefore(wf, s);
+    })(document);
+  </script>
   <script>
     /*! loadCSS: load a CSS file asynchronously. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT */
     (function(w) {
@@ -86,7 +102,6 @@
         w.loadCSS = loadCSS;
       }
     }(typeof global !== "undefined" ? global : this));
-    loadCSS('https://fast.fonts.net/cssapi/e3855c23-bf23-48e5-a10c-0e1d246fb74c.css');
     loadCSS('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
   </script>
   <!-- Place favicon.ico in the root directory -->
@@ -100,23 +115,6 @@
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
-
-  <script type="text/javascript">
-    WebFontConfig = {
-      google: {
-        families: ['Roboto:400,500,700:latin']
-      }
-    };
-    (function() {
-      var wf = document.createElement('script');
-      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-      wf.type = 'text/javascript';
-      wf.async = 'true';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(wf, s);
-    })();
-  </script>
 
 </head>
 

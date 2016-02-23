@@ -292,6 +292,10 @@ body {
     }
   }
 }
+.button.is-medium {
+  height: 46px;
+  padding: 12px 20px;
+}
 .button.is-primary {
   color: #222;
   &:hover {

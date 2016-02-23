@@ -5,6 +5,7 @@ $techhub: #f9b233;
 @import "../../bower_components/bulma/bulma/config/variables";
 $primary: #f9b233;
 $radius: 0;
+$family-sans-serif: "Roboto", "Helvetica", "Arial", sans-serif;
 @import "../../bower_components/bulma/bulma/config/generated-variables";
 @import "../../bower_components/bulma/bulma/base/base";
 @import "../../bower_components/bulma/bulma/elements/elements";
@@ -26,7 +27,6 @@ $slick-font-path: "../fonts/" !default;
   }
 }
 body {
-  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   background-color: #111;
 }
@@ -195,6 +195,7 @@ body {
   }
   &.full-bg-global-community {
     background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)),url('../images/map2.png');
+    background-position: center;
   }
   &.full-bg-flex-space {
     background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, .35), rgba(0, 0, 0, 0.9)), url('../images/bg_space.jpg');
@@ -278,6 +279,9 @@ body {
   }
   .navbar-item {
     margin-bottom: 30px;
+    &:last-child {
+      margin-bottom: 0;
+    }
     @media screen and (min-width: 35em) {
       margin-bottom: 0;
     }

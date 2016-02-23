@@ -44,7 +44,8 @@ body {
 }
 .hero.is-fullheight.hero-home {
   background-color: #000;
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, .9)),url('../images/bg_mobile.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, .95)),url('../images/bg_team.jpg');
+  background-position: center;
   @media screen and (min-width: 35em) {
     background: #000;
   }

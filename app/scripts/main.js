@@ -2,7 +2,7 @@
   'use strict';
 
   $('.covervid-video').coverVid(1280, 720);
-  
+
   $('#toggle').click(function() {
     $(this).toggleClass('active');
     $('#overlay').toggleClass('open');

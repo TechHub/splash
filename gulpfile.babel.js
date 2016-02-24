@@ -180,6 +180,7 @@ gulp.task('deploy', ['build'], () => {
   };
 
   return gulp.src('dist/**/*.*')
+    .pipe($.awspublish.gzip())
     .pipe(publisher.publish(headers))
     .pipe(publisher.sync())
     .pipe(publisher.cache())

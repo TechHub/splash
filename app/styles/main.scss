@@ -31,6 +31,9 @@ body {
   font-size: 16px;
   background-color: #111;
 }
+.is-hidden {
+  display: none;
+}
 .is-th-font {
   font-family: 'Rockwell W02', sans-serif;
   letter-spacing: 1px;
@@ -123,14 +126,20 @@ body {
   }
 }
 .logo-home {
-  max-width: 200px;
-  margin-bottom: 20px;
+  max-width: 165px;
+  margin-bottom: 10px;
+  @media screen and (min-width: 35em) {
+    max-width: 220px;
+    margin-bottom: 20px;
+  }
 }
 .wrapper-gfe {
   color: #fff;
-  margin-bottom: 80px;
+  position: relative;;
+  bottom: 75px;
   @media screen and (min-width: 35em) {
     margin-bottom: 0;
+    bottom: 0;
   }
   .text-gfe {
     text-transform: uppercase;
@@ -186,6 +195,7 @@ body {
     }
   }
 }
+// memberships
 .full-bg {
   position: relative;
   color: #fff;
@@ -261,21 +271,12 @@ body {
     }
   }
 }
-// membership
-.message.message-membership {
-  .message-header {
-    font-size: 1.1em;
-    font-weight: bold;
-    padding: 8px 6px;
-    text-transform: uppercase;
-  }
-  .message-body {
-    color: #555;
-  }
-}
 // newsletter
 .hero.is-primary.is-bold {
   background-image: linear-gradient(141deg, #111 0%, #444 61%, #222 100%);
+}
+.mce-responses {
+  margin-top: 10px;
 }
 // stats
 .navbar.navbar-stats {
@@ -292,7 +293,7 @@ body {
     }
   }
 }
-.button.is-medium {
+.button.is-home-cta.is-medium {
   height: 46px;
   padding: 12px 20px;
 }

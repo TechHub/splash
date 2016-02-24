@@ -24,85 +24,42 @@
       wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js';
       s.parentNode.insertBefore(wf, s);
     })(document);
-  </script>
-  <script>
     /*! loadCSS: load a CSS file asynchronously. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT */
-    (function(w) {
+    ! function(e) {
       "use strict";
-      /* exported loadCSS */
-      var loadCSS = function(href, before, media) {
-        // Arguments explained:
-        // `href` [REQUIRED] is the URL for your CSS file.
-        // `before` [OPTIONAL] is the element the script should use as a reference for injecting our stylesheet <link> before
-        // By default, loadCSS attempts to inject the link after the last stylesheet or script in the DOM. However, you might desire a more specific location in your document.
-        // `media` [OPTIONAL] is the media type or query of the stylesheet. By default it will be 'all'
-        var doc = w.document;
-        var ss = doc.createElement("link");
-        var newMedia = media || "all";
-        var ref;
-        if (before) {
-          ref = before;
-        } else {
-          var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
-          ref = refs[refs.length - 1];
+      var n = function(n, t, i) {
+        function o(e) {
+          return r.body ? e() : void setTimeout(function() {
+            o(e)
+          })
         }
-
-        var sheets = doc.styleSheets;
-        ss.rel = "stylesheet";
-        ss.href = href;
-        // temporarily set media to something inapplicable to ensure it'll fetch without blocking render
-        ss.media = "only x";
-
-        // wait until body is defined before injecting link. This ensures a non-blocking load in IE11.
-        function ready(cb) {
-          if (doc.body) {
-            return cb();
-          }
-          setTimeout(function() {
-            ready(cb);
-          });
+        var d, r = e.document,
+          a = r.createElement("link"),
+          l = i || "all";
+        if (t) d = t;
+        else {
+          var f = (r.body || r.getElementsByTagName("head")[0]).childNodes;
+          d = f[f.length - 1]
         }
-        // Inject link
-        // Note: the ternary preserves the existing behavior of "before" argument, but we could choose to change the argument to "after" in a later release and standardize on ref.nextSibling for all refs
-        // Note: `insertBefore` is used instead of `appendChild`, for safety re: http://www.paulirish.com/2011/surefire-dom-element-insertion/
-        ready(function() {
-          ref.parentNode.insertBefore(ss, (before ? ref : ref.nextSibling));
+        var s = r.styleSheets;
+        a.rel = "stylesheet", a.href = n, a.media = "only x", o(function() {
+          d.parentNode.insertBefore(a, t ? d : d.nextSibling)
         });
-        // A method (exposed on return object for external use) that mimics onload by polling until document.styleSheets until it includes the new sheet.
-        var onloadcssdefined = function(cb) {
-          var resolvedHref = ss.href;
-          var i = sheets.length;
-          while (i--) {
-            if (sheets[i].href === resolvedHref) {
-              return cb();
-            }
-          }
+        var u = function(e) {
+          for (var n = a.href, t = s.length; t--;)
+            if (s[t].href === n) return e();
           setTimeout(function() {
-            onloadcssdefined(cb);
-          });
+            u(e)
+          })
         };
-
-        // once loaded, set link's media back to `all` so that the stylesheet applies once it loads
-        if (ss.addEventListener) {
-          ss.addEventListener("load", function() {
-            this.media = newMedia;
-          });
-        }
-        ss.onloadcssdefined = onloadcssdefined;
-        onloadcssdefined(function() {
-          if (ss.media !== newMedia) {
-            ss.media = newMedia;
-          }
-        });
-        return ss;
+        return a.addEventListener && a.addEventListener("load", function() {
+          this.media = l
+        }), a.onloadcssdefined = u, u(function() {
+          a.media !== l && (a.media = l)
+        }), a
       };
-      // commonjs
-      if (typeof exports !== "undefined") {
-        exports.loadCSS = loadCSS;
-      } else {
-        w.loadCSS = loadCSS;
-      }
-    }(typeof global !== "undefined" ? global : this));
+      "undefined" != typeof exports ? exports.loadCSS = n : e.loadCSS = n
+    }("undefined" != typeof global ? global : this);
     loadCSS('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
   </script>
   <!-- Place favicon.ico in the root directory -->
@@ -128,7 +85,7 @@
   <div class="overlay is-overlay" id="overlay">
     <nav class="overlay-menu">
       <ul>
-        <li ><a href="https://apply.techhub.com">Memberships</a></li>
+        <li><a href="https://apply.techhub.com">Memberships</a></li>
         <li><a href="https://www.techhub.com/events/">Events</a></li>
         <li><a href="https://blog.techhub.com">Blog</a></li>
         <li><a href="https://www.techhub.com/contact-us/">Contact Us</a></li>
@@ -140,16 +97,9 @@
       <header class="header">
         <div class="container container-header">
           <div class="header-left">
-            <!-- <span class="header-item is-dark-bg">
-            <a class="is-active" href="#">Home</a></span> -->
           </div>
           <div class="header-center">
           </div>
-          <!-- <span class="header-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-          </span> -->
           <div class="header-right header-menu">
             <span class="header-item is-dark-bg">
             <a href="https://apply.techhub.com">Memberships</a>
@@ -224,7 +174,7 @@
         <p class="title">58</p>
       </div>
       <div class="navbar-item is-text-centered">
-        <p class="heading">Events</p>
+        <p class="heading">Events organised</p>
         <p class="title">365 per year</p>
       </div>
       <div class="navbar-item is-text-centered">
@@ -307,7 +257,6 @@
                   <p class="title is-6 is-text-right">Member</p>
                 </div>
               </div>
-
               <div class="content">
                 Your simple secure access to everything! The best authentication app and a proud TechHub member for over 3 years.
               </div>
@@ -326,7 +275,6 @@
                   <p class="title is-6 is-text-right">Alumni</p>
                 </div>
               </div>
-
               <div class="content">
                 Reinventing communication. Started with a team of 2 at TechHub and outgrew to 60+ over 3 years.
               </div>
@@ -345,7 +293,6 @@
                   <p class="title is-6 is-text-right">Alumni</p>
                 </div>
               </div>
-
               <div class="content">
                 Divide is giving people the best mobile experience at work. Some more text here please.
               </div>
@@ -364,9 +311,62 @@
                   <p class="title is-6 is-text-right">Alumni</p>
                 </div>
               </div>
-
               <div class="content">
                 The world's leading web data extraction platform for businesses and individuals, closed $17.3M up to date.
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-128x128">
+                    <img src="images/logo_trouva.png" alt="Image">
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p class="title is-6 is-text-right">Member</p>
+                </div>
+              </div>
+              <div class="content">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, vitae dignissimos
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-128x128">
+                    <img src="images/logo_flatclub.png" alt="Image">
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p class="title is-6 is-text-right">Member</p>
+                </div>
+              </div>
+              <div class="content">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint consectetur, quia magni officia explicabo
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-128x128">
+                    <img src="images/logo_bmv.png" alt="Image">
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p class="title is-6 is-text-right">Member</p>
+                </div>
+              </div>
+              <div class="content">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti ab ad nisi, consectetur modi
               </div>
             </div>
           </div>
@@ -383,7 +383,6 @@
                   <p class="title is-6 is-text-right">Member</p>
                 </div>
               </div>
-
               <div class="content">
                 Royalty-free soundtracks. Started at TechHub when there was only the CEO and grew to over 15 people on the team.
               </div>
@@ -406,9 +405,15 @@
             <p class="subtitle">Get to know what's happening in our Community!</p>
           </div>
           <div class="column is-half">
-            <div class="control is-horizontal">
-              <input type="email" value="" name="EMAIL" class="input is-flat required email" id="mce-EMAIL" placeholder="email address" required="" aria-required="true">
-              <input type="submit" value="Subscribe" name="subscribe" class="button is-primary is-outlined is-inverted">
+            <form action="https://techhub.us1.list-manage.com/subscribe/post-json?u=031b1985139bd9da3b27eff77&id=565a99f7b0" id="mce-form">
+              <div class="control is-horizontal">
+                <input type="email" value="" name="EMAIL" class="input is-flat required email" id="mce-EMAIL" placeholder="email address" required="" aria-required="true">
+                <button id="mce-subscribe-button" type="submit" name="subscribe" class="button is-primary is-outlined is-inverted">Subscribe</button>
+              </div>
+            </form>
+            <div class="mce-responses is-hidden">
+              <div class="notification is-danger response is-hidden" id="mce-error-response"></div>
+              <div class="notification is-success response is-hidden" id="mce-success-response">Almost finished... We need to confirm your email address. To complete the subscription process, please click the link in the email we just sent you.</div>
             </div>
           </div>
         </div>
@@ -467,13 +472,13 @@
       e.src = 'https://www.google-analytics.com/analytics.js';
       r.parentNode.insertBefore(e, r)
     }(window, document, 'script', 'ga'));
-    ga('create', 'UA-XXXXX-X');
+    ga('create', 'UA-33525349-1', 'techhub.com');
     ga('send', 'pageview');
   </script>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <!-- build:js scripts/vendor.js -->
   <!-- bower:js -->
-  <script src="/bower_components/jquery/dist/jquery.js"></script>
   <script src="/bower_components/slick-carousel/slick/slick.js"></script>
   <script src="/bower_components/covervid/covervid.js"></script>
   <!-- endbower -->

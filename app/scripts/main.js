@@ -52,7 +52,15 @@
   });
 
   // Mailchimp subscribe
-  ajaxMailChimpForm($('#mce-form'), $('#mce-success-response'));
+  function isValidEmail($form) {
+    var email = $form.find('input[type="email"]').val();
+    if (!email || !email.length) {
+      return false;
+    } else if (email.indexOf('@') === -1) {
+      return false;
+    }
+    return true;
+  }
 
   function ajaxMailChimpForm($form, $resultElement) {
     $form
@@ -70,17 +78,7 @@
       });
   }
 
-  function isValidEmail($form) {
-    var email = $form.find('input[type="email"]').val();
-    if (!email || !email.length) {
-      return false;
-    } else if (email.indexOf('@') == -1) {
-      return false;
-    }
-    return true;
-  }
-
-  function submitSubscribeForm($form, $resultElement) {
+  function submitSubscribeForm($form) {
     $('#mce-subscribe-button').addClass('is-loading');
     $.ajax({
       type: 'GET',
@@ -93,15 +91,16 @@
       success: function(data) {
         $('#mce-subscribe-button').removeClass('is-loading');
         $('.mce-responses').removeClass('is-hidden');
-        if(data.result === 'error'){
+        if (data.result === 'error') {
           $('#mce-error-response').removeClass('is-hidden').html(data.msg);
-        }
-        else {
+        } else {
           $('#mce-success-response').removeClass('is-hidden').html(data.msg);
         }
       }
     });
   }
+
+  ajaxMailChimpForm($('#mce-form'), $('#mce-success-response'));
 
 
 

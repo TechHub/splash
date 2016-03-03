@@ -198,7 +198,7 @@ body {
     background-position: center;
   }
   &.full-bg-events {
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .35), rgba(0, 0, 0, 0.9)), url('../images/bg_events2.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .35), rgba(0, 0, 0, 0.9)), url('../images/bg_events3.jpg');
     background-position: center;
   }
   &.full-bg-flex {
@@ -239,7 +239,7 @@ body {
     color: #333;
   }
   .slick-prev {
-    z-index: 100;
+    z-index: 1;
     left: 3px;
     @media screen and (min-width: 35em) {
       left: -25px;
@@ -259,6 +259,11 @@ body {
 .mce-responses {
   margin-top: 10px;
 }
+.control-full {
+  .select, select, button {
+    width: 100%;
+  }
+}
 // stats
 .navbar.navbar-stats {
   .heading {
@@ -277,6 +282,10 @@ body {
 .button.is-home-cta.is-medium {
   height: 46px;
   padding: 12px 20px;
+  width: 100%;
+  @media screen and (min-width: 35em) {
+    width: auto;
+  }
 }
 .button.is-primary {
   color: #222;
@@ -295,6 +304,10 @@ body {
 }
 .footer ul {
   border-bottom: none;
+  display: block;
+  @media screen and (min-width: 35em) {
+    display: flex;
+  }
 }
 .footer .columns {
   padding-bottom: 0;
@@ -366,4 +379,56 @@ body {
   background-image: url('../images/map.png');
   background-size: contain;
   background-repeat: no-repeat;
+}
+.is-modal-social {
+  .message-header {
+    padding: 15px;
+    text-align: center;
+    i.fa {
+      font-size: 3em;
+    }
+  }
+  .message-body {
+    height: 180px;
+  }
+  .message-body a {
+    color: #777;
+    &:hover {
+      color: #333;
+    }
+  }
+}
+.is-facebook {
+  .message-header {
+    background-color: #3b5998;
+  }
+}
+.is-twitter {
+  .message-header {
+    background-color: #55acee;
+  }
+}
+.is-instagram {
+  .message-header {
+    background-color: #3f729b;
+  }
+}
+
+.locations-button-mobile {
+  font-size: 1.2em;
+  margin-top: 30px;
+  text-transform: uppercase;
+  color: $techhub;
+  border: 1px solid $techhub;
+  width: 200px;
+  margin: 30px auto;
+}
+.nav-modal-locations {
+  li a {
+    font-size: 2.1em;
+    font-size: 5.4vh;
+  }
+}
+.modal-close-left {
+  left: 20px;
 }

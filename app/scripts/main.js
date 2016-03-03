@@ -10,6 +10,24 @@
     $('#overlay').toggleClass('open');
   });
 
+  // Social media links
+  $('.modal-social-open').click(function(e){
+    e.preventDefault();
+    $('#modal-social').addClass('is-active');
+  });
+  $('#modal-social-close').click(function(){
+    $('#modal-social').removeClass('is-active');
+  });
+
+  // Locations for mobile
+  $('#modal-locations-open').click(function(e){
+    e.preventDefault();
+    $('#modal-locations').addClass('is-active');
+  });
+  $('#modal-locations-close').click(function(){
+    $('#modal-locations').removeClass('is-active');
+  });
+
   // correct fullscreen
   function fullscreen() {
     var fullpage = $('.hero.is-fullheight');
@@ -20,16 +38,6 @@
   }
   fullscreen();
   $(window).resize(fullscreen);
-
-  // same height membership columns
-  var membershipColumns = document.querySelectorAll('.same-height .message-body');
-  var membershipColumnsMaxHeight = 0;
-  Array.prototype.forEach.call(membershipColumns, function(el) {
-    membershipColumnsMaxHeight = Math.max(membershipColumnsMaxHeight, el.offsetHeight);
-  });
-  Array.prototype.forEach.call(membershipColumns, function(el) {
-    el.style.minHeight = membershipColumnsMaxHeight + 'px';
-  });
 
   // carousel
   $('.carousel.carousel-members').slick({
@@ -101,7 +109,5 @@
   }
 
   ajaxMailChimpForm($('#mce-form'), $('#mce-success-response'));
-
-
 
 })(jQuery);

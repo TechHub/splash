@@ -225,6 +225,11 @@ body {
     }
   }
 }
+.section-membership {
+  .subtitle {
+    margin-bottom: 25px;
+  }
+}
 // alumni & members
 .carousel.carousel-members {
   margin-bottom: 10px;
@@ -331,6 +336,7 @@ body {
   margin: 0 auto;
   display: block;
 }
+
 .small-padding-bottom {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -352,6 +358,10 @@ body {
     h2 {
       margin-top: 10px;
       margin-bottom: 0;
+      &.partner-bt {
+        font-size: .9em;
+          margin-bottom: 10px;
+      }
     }
     .image {
       margin: 0 20px;

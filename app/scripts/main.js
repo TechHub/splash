@@ -4,6 +4,20 @@
   // Full screen video as background cover
   $('.covervid-video').coverVid(1280, 720);
 
+  // smooth scroll
+  $('#join-the-community').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top - 250
+        }, 1000);
+        return false;
+      }
+    }
+  });
+
   // Responsive menu toggle
   $('#toggle').click(function() {
     $(this).toggleClass('active');
@@ -88,15 +102,18 @@
 
   function submitSubscribeForm($form) {
     $('#mce-subscribe-button').addClass('is-loading');
+    var location = $('#select-location-newsletter').val().toUpperCase();
+    var data = $form.serialize()+ '&' + location + '=1';
     $.ajax({
       type: 'GET',
       url: $form.attr('action'),
-      data: $form.serialize(),
+      data: data,
       cache: false,
       dataType: 'jsonp',
       jsonp: 'c', // trigger MailChimp to return a JSONP response
       contentType: 'application/json; charset=utf-8',
       success: function(data) {
+        console.log(data);
         $('#mce-subscribe-button').removeClass('is-loading');
         $('.mce-responses').removeClass('is-hidden');
         if (data.result === 'error') {

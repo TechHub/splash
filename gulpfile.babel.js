@@ -3,26 +3,33 @@ import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
 import del from 'del';
-import {stream as wiredep} from 'wiredep';
+import {
+  stream as wiredep
+} from 'wiredep';
 import fs from 'fs';
+import runSequence from 'run-sequence';
+import RevAll from 'gulp-rev-all';
+import s3Index from 'gulp-s3-index';
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
 const awsConfig = JSON.parse(fs.readFileSync('./awsConfig.json'));
+const deployConfig = JSON.parse(fs.readFileSync('./deployConfig.json'));
 
 const publisher = $.awspublish.create({
-    'params': {
-      'Bucket': 'th-splash',
-    },
-    'accessKeyId': awsConfig.key,
-    'secretAccessKey': awsConfig.secret
-  });
+  'params': {
+    'Bucket': 'th-splash',
+  },
+  'accessKeyId': awsConfig.key,
+  'secretAccessKey': awsConfig.secret,
+});
 
 const cloudfrontConfig = {
   'accessKeyId': awsConfig.key,
   'secretAccessKey': awsConfig.secret,
-  'distributionId': awsConfig.distributionId
+  'distributionId': awsConfig.distributionId,
+  'bucket':'th-splash',
 };
 
 gulp.task('styles', () => {
@@ -34,10 +41,14 @@ gulp.task('styles', () => {
       precision: 10,
       includePaths: ['.']
     }).on('error', $.sass.logError))
-    .pipe($.autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']}))
+    .pipe($.autoprefixer({
+      browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']
+    }))
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest('.tmp/styles'))
-    .pipe(reload({stream: true}));
+    .pipe(reload({
+      stream: true
+    }));
 });
 
 gulp.task('scripts', () => {
@@ -47,13 +58,18 @@ gulp.task('scripts', () => {
     .pipe($.babel())
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('.tmp/scripts'))
-    .pipe(reload({stream: true}));
+    .pipe(reload({
+      stream: true
+    }));
 });
 
 function lint(files, options) {
   return () => {
     return gulp.src(files)
-      .pipe(reload({stream: true, once: true}))
+      .pipe(reload({
+        stream: true,
+        once: true
+      }))
       .pipe($.eslint(options))
       .pipe($.eslint.format())
       .pipe($.if(!browserSync.active, $.eslint.failAfterError()));
@@ -76,35 +92,43 @@ gulp.task('lint:test', lint('test/spec/**/*.js', testLintOptions));
 
 gulp.task('html', ['styles', 'scripts'], () => {
   return gulp.src('app/*.html')
-    .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
+    .pipe($.useref({
+      searchPath: ['.tmp', 'app', '.']
+    }))
     .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.cssnano()))
-    .pipe($.if('*.js', $.rev()))
-    .pipe($.if('*.css', $.rev()))
-    .pipe($.revReplace())
-    .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
+    // .pipe($.if('*.js', $.rev()))
+    // .pipe($.if('*.css', $.rev()))
+    // .pipe($.revReplace())
+    .pipe($.if('*.html', $.htmlmin({
+      collapseWhitespace: true,
+      minifyJS: true,
+      minifyCSS: true,
+    })))
     .pipe(gulp.dest('dist'));
 });
 
 gulp.task('images', () => {
   return gulp.src('app/images/**/*')
     .pipe($.if($.if.isFile, $.cache($.imagemin({
-      progressive: true,
-      interlaced: true,
-      // don't remove IDs from SVGs, they are often used
-      // as hooks for embedding and styling
-      svgoPlugins: [{cleanupIDs: false}]
-    }))
-    .on('error', function (err) {
-      console.log(err);
-      this.end();
-    })))
+        progressive: true,
+        interlaced: true,
+        // don't remove IDs from SVGs, they are often used
+        // as hooks for embedding and styling
+        svgoPlugins: [{
+          cleanupIDs: false
+        }]
+      }))
+      .on('error', function(err) {
+        console.log(err);
+        this.end();
+      })))
     .pipe(gulp.dest('dist/images'));
 });
 
 gulp.task('fonts', () => {
-  return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2}', function (err) {})
-    .concat('app/fonts/**/*'))
+  return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2}', function(err) {})
+      .concat('app/fonts/**/*'))
     .pipe(gulp.dest('.tmp/fonts'))
     .pipe(gulp.dest('dist/fonts'));
 });
@@ -179,20 +203,41 @@ gulp.task('serve:test', ['scripts'], () => {
   gulp.watch('test/spec/**/*.js', ['lint:test']);
 });
 
-gulp.task('deploy', ['build'], () => {
+gulp.task('publish', () => {
   // define custom headers
   const headers = {
     'Cache-Control': 'max-age=315360000, no-transform, public'
   };
 
+  let revAll = new RevAll({ dontRenameFile: [/^\/favicon.ico$/g, 'robots.txt', 'apple-touch-icon.png'], });
+
   return gulp.src('dist/**/*.*')
-    .pipe($.if('index.html', $.rev()))
+    // .pipe(revAll.revision())
     .pipe($.awspublish.gzip())
     .pipe(publisher.publish(headers))
     .pipe(publisher.sync())
     .pipe(publisher.cache())
     .pipe($.awspublish.reporter())
-    .pipe($.cloudfront(cloudfrontConfig));
+    .pipe($.cloudfront(cloudfrontConfig))
+    // .pipe(s3Index(cloudfrontConfig));
+});
+
+gulp.task('sftp_staging', function () {
+	return gulp.src('dist/**/*.*')
+		.pipe($.sftp(deployConfig.staging));
+});
+
+gulp.task('sftp_production', function () {
+	return gulp.src('dist/**/*.*')
+		.pipe($.sftp(deployConfig.production));
+});
+
+gulp.task('deploy:staging', function() {
+  runSequence('clean', 'build', 'sftp_staging');
+});
+
+gulp.task('deploy:production', function() {
+  runSequence('clean', 'build', 'sftp_production');
 });
 
 // inject bower components
@@ -211,7 +256,10 @@ gulp.task('wiredep', () => {
 });
 
 gulp.task('build', ['lint', 'html', 'images', 'fonts', 'videos', 'extras'], () => {
-  return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
+  return gulp.src('dist/**/*').pipe($.size({
+    title: 'build',
+    gzip: true
+  }));
 });
 
 gulp.task('default', ['clean'], () => {

@@ -19,6 +19,12 @@ const publisher = $.awspublish.create({
     'secretAccessKey': awsConfig.secret
   });
 
+const cloudfrontConfig = {
+  'accessKeyId': awsConfig.key,
+  'secretAccessKey': awsConfig.secret,
+  'distributionId': awsConfig.distributionId
+};
+
 gulp.task('styles', () => {
   return gulp.src('app/styles/*.scss')
     .pipe($.plumber())
@@ -180,11 +186,13 @@ gulp.task('deploy', ['build'], () => {
   };
 
   return gulp.src('dist/**/*.*')
+    .pipe($.if('index.html', $.rev()))
     .pipe($.awspublish.gzip())
     .pipe(publisher.publish(headers))
     .pipe(publisher.sync())
     .pipe(publisher.cache())
-    .pipe($.awspublish.reporter());
+    .pipe($.awspublish.reporter())
+    .pipe($.cloudfront(cloudfrontConfig));
 });
 
 // inject bower components

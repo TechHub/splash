@@ -1,14 +1,19 @@
 (function($) {
   'use strict';
 
+  // link membership boxes
+  $('.full-bg-membership').click(function(){
+    window.open('https://apply.techhub.com');
+  });
+
   // Full screen video as background cover
   $('.covervid-video').coverVid(1280, 720);
 
   // smooth scroll
   $('#join-the-community').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+    if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
       var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
       if (target.length) {
         $('html, body').animate({
           scrollTop: target.offset().top - 250
@@ -25,20 +30,20 @@
   });
 
   // Social media links
-  $('.modal-social-open').click(function(e){
+  $('.modal-social-open').click(function(e) {
     e.preventDefault();
     $('#modal-social').addClass('is-active');
   });
-  $('#modal-social-close').click(function(){
+  $('#modal-social-close').click(function() {
     $('#modal-social').removeClass('is-active');
   });
 
   // Locations for mobile
-  $('#modal-locations-open').click(function(e){
+  $('#modal-locations-open').click(function(e) {
     e.preventDefault();
     $('#modal-locations').addClass('is-active');
   });
-  $('#modal-locations-close').click(function(){
+  $('#modal-locations-close').click(function() {
     $('#modal-locations').removeClass('is-active');
   });
 
@@ -103,11 +108,11 @@
   function submitSubscribeForm($form) {
     $('#mce-subscribe-button').addClass('is-loading');
     var location = $('#select-location-newsletter').val().toUpperCase();
-    var data = $form.serialize()+ '&' + location + '=1';
+    var dataToSend = $form.serialize() + '&' + location + '=1';
     $.ajax({
       type: 'GET',
       url: $form.attr('action'),
-      data: data,
+      data: dataToSend,
       cache: false,
       dataType: 'jsonp',
       jsonp: 'c', // trigger MailChimp to return a JSONP response

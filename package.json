@@ -13,6 +13,7 @@
     "gulp-awspublish": "^3.0.1",
     "gulp-babel": "^6.1.1",
     "gulp-cache": "^0.2.8",
+    "gulp-cloudfront": "0.0.14",
     "gulp-cssnano": "^2.0.0",
     "gulp-eslint": "^0.13.2",
     "gulp-htmlmin": "^1.3.0",
@@ -42,8 +43,5 @@
         "single"
       ]
     }
-  },
-  "dependencies": {
-    "wiredep": "^2.2.2"
   }
 }

@@ -16,9 +16,9 @@ $button-width: 28px;
   cursor: pointer;
   z-index: 100;
   transition: opacity .25s ease;
-  @media screen and (min-width: 35em) {
-    display: none;
-  }
+  // @media screen and (min-width: 35em) {
+  //   display: none;
+  // }
   &:hover {
     opacity: .85;
   }

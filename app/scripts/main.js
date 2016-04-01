@@ -2,7 +2,7 @@
   'use strict';
 
   // link membership boxes
-  $('.full-bg-membership').click(function(){
+  $('.full-bg-membership').click(function() {
     window.open('https://apply.techhub.com');
   });
 
@@ -63,11 +63,17 @@
     slidesToShow: 3,
     mobileFirst: true,
     responsive: [{
-      breakpoint: 768,
+      breakpoint: 992,
       settings: {
         arrows: true,
         centerPadding: '40px',
         slidesToShow: 3
+      }
+    }, {
+      breakpoint: 480,
+      settings: {
+        arrows: true,
+        slidesToShow: 2
       }
     }, {
       breakpoint: 320,

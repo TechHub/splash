@@ -1,514 +1,503 @@
 <!doctype html>
 <html lang="en">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="description" content="TechHub is the global community for technology entrepreneurs and startups. We work with over 700 companies around the world to help them scale.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TechHub - The Global Community for Technology Startups</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="TechHub is the global community for technology entrepreneurs and startups. We work with over 700 companies around the world to help them scale.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TechHub - The Global Community for Technology Startups</title>
 
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <script type="text/javascript">
-      WebFontConfig = {
-        google: {
-          families: ['Roboto:400,500,700:latin']
-        },
-        custom: {
-          families: ['Rockwell W02'],
-          urls: ['https://fast.fonts.net/cssapi/e3855c23-bf23-48e5-a10c-0e1d246fb74c.css']
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <script type="text/javascript">
+    WebFontConfig = {
+      google: {
+        families: ['Roboto:400,500,700:latin']
+      },
+      custom: {
+        families: ['Rockwell W02'],
+        urls: ['https://fast.fonts.net/cssapi/e3855c23-bf23-48e5-a10c-0e1d246fb74c.css']
+      }
+    };
+    (function(d) {
+      var wf = d.createElement('script'),
+        s = d.scripts[0];
+      wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js';
+      s.parentNode.insertBefore(wf, s);
+    })(document);
+    /*! loadCSS: load a CSS file asynchronously. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT */
+    ! function(e) {
+      "use strict";
+      var n = function(n, t, i) {
+        function o(e) {
+          return r.body ? e() : void setTimeout(function() {
+            o(e)
+          })
         }
-      };
-      (function (d) {
-        var wf = d.createElement('script'),
-          s = d.scripts[0];
-        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js';
-        s.parentNode.insertBefore(wf, s);
-      })(document);
-      /*! loadCSS: load a CSS file asynchronously. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT */
-      !function (e) {
-        "use strict";
-        var n = function (n, t, i) {
-          function o(e) {
-            return r.body
-              ? e()
-              : void setTimeout(function () {
-                o(e)
-              })
-          }
-          var d,
-            r = e.document,
-            a = r.createElement("link"),
-            l = i || "all";
-          if (t)
-            d = t;
-          else {
-            var f = (r.body || r.getElementsByTagName("head")[0]).childNodes;
-            d = f[f.length - 1]
-          }
-          var s = r.styleSheets;
-          a.rel = "stylesheet",
+        var d,
+          r = e.document,
+          a = r.createElement("link"),
+          l = i || "all";
+        if (t)
+          d = t;
+        else {
+          var f = (r.body || r.getElementsByTagName("head")[0]).childNodes;
+          d = f[f.length - 1]
+        }
+        var s = r.styleSheets;
+        a.rel = "stylesheet",
           a.href = n,
           a.media = "only x",
-          o(function () {
-            d.parentNode.insertBefore(a, t
-              ? d
-              : d.nextSibling)
+          o(function() {
+            d.parentNode.insertBefore(a, t ? d : d.nextSibling)
           });
-          var u = function (e) {
-            for (var n = a.href, t = s.length; t--;)
-              if (s[t].href === n)
-                return e();
-          setTimeout(function () {
-              u(e)
-            })
-          };
-          return a.addEventListener && a.addEventListener("load", function () {
+        var u = function(e) {
+          for (var n = a.href, t = s.length; t--;)
+            if (s[t].href === n)
+              return e();
+          setTimeout(function() {
+            u(e)
+          })
+        };
+        return a.addEventListener && a.addEventListener("load", function() {
             this.media = l
           }),
           a.onloadcssdefined = u,
-          u(function () {
+          u(function() {
             a.media !== l && (a.media = l)
           }),
           a
-        };
-        "undefined" != typeof exports
-          ? exports.loadCSS = n
-          : e.loadCSS = n
-      }("undefined" != typeof global
-        ? global
-        : this);
-      loadCSS('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
-    </script>
-    <!-- Place favicon.ico in the root directory -->
+      };
+      "undefined" != typeof exports
+        ? exports.loadCSS = n : e.loadCSS = n
+    }("undefined" != typeof global ? global : this);
+    loadCSS('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
+  </script>
+  <!-- Place favicon.ico in the root directory -->
 
-    <!-- build:css styles/vendor.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="/bower_components/bulma/css/bulma.css"/>
-    <!-- endbower -->
-    <!-- endbuild -->
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="/bower_components/bulma/css/bulma.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
 
-    <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
 
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <div id="modal-locations" class="modal">
-      <div class="modal-background"></div>
-      <div class="modal-container">
-        <div class="modal-content">
-          <nav class="nav-modal-locations">
-            <ul>
-              <li>
-                <a href="https://bangalore.techhub.com">Bangalore</a>
-              </li>
-              <li>
-                <a href="https://bucharest.techhub.com">Bucharest</a>
-              </li>
-              <li>
-                <a href="https://london.techhub.com">London</a>
-              </li>
-              <li>
-                <a href="https://madrid.techhub.com">Madrid</a>
-              </li>
-              <li>
-                <a href="https://riga.techhub.com">Riga</a>
-              </li>
-              <li>
-                <a href="https://swansea.techhub.com">Swansea</a>
-              </li>
-              <li>
-                <a href="https://warsaw.techhub.com">Warsaw</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+  <div id="modal-locations" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-container">
+      <div class="modal-content">
+        <nav class="nav-modal-locations">
+          <ul>
+            <li>
+              <a href="https://bangalore.techhub.com">Bangalore</a>
+            </li>
+            <li>
+              <a href="https://bucharest.techhub.com">Bucharest</a>
+            </li>
+            <li>
+              <a href="https://london.techhub.com">London</a>
+            </li>
+            <li>
+              <a href="https://madrid.techhub.com">Madrid</a>
+            </li>
+            <li>
+              <a href="https://riga.techhub.com">Riga</a>
+            </li>
+            <li>
+              <a href="https://swansea.techhub.com">Swansea</a>
+            </li>
+            <li>
+              <a href="https://warsaw.techhub.com">Warsaw</a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <button id="modal-locations-close" class="modal-close modal-close-left"></button>
     </div>
+    <button id="modal-locations-close" class="modal-close modal-close-left"></button>
+  </div>
 
-    <div class="button_container is-hidden-desktop" id="toggle">
-      <span class="top"></span>
-      <span class="middle"></span>
-      <span class="bottom"></span>
-    </div>
-    <div class="overlay is-overlay" id="overlay">
-      <nav>
-        <ul>
-          <li>
-            <a href="https://apply.techhub.com">Memberships</a>
-          </li>
-          <li>
-            <a href="https://www.techhub.com/events/">Events</a>
-          </li>
-          <li>
-            <a href="https://blog.techhub.com">Blog</a>
-          </li>
-          <li>
-            <a href="https://www.techhub.com/contact-us/">Contact Us</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <section class="hero is-fullheight hero-home">
-      <div class="hero-header">
-        <header class="header">
-          <div class="container container-header">
-            <div class="header-left"></div>
-            <div class="header-center"></div>
-            <div class="header-right header-menu is-hidden-touch">
-              <span class="header-item is-dark-bg">
+  <div class="button_container is-hidden-desktop" id="toggle">
+    <span class="top"></span>
+    <span class="middle"></span>
+    <span class="bottom"></span>
+  </div>
+  <div class="overlay is-overlay" id="overlay">
+    <nav>
+      <ul>
+        <li>
+          <a href="https://apply.techhub.com">Memberships</a>
+        </li>
+        <li>
+          <a href="https://www.techhub.com/events/">Events</a>
+        </li>
+        <li>
+          <a href="https://blog.techhub.com">Blog</a>
+        </li>
+        <li>
+          <a href="https://www.techhub.com/contact-us/">Contact Us</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <section class="hero is-fullheight hero-home">
+    <div class="hero-header">
+      <header class="header">
+        <div class="container container-header">
+          <div class="header-left"></div>
+          <div class="header-center"></div>
+          <div class="header-right header-menu is-hidden-touch">
+            <span class="header-item is-dark-bg">
                 <a href="https://apply.techhub.com">Memberships</a>
               </span>
-              <span class="header-item is-dark-bg">
+            <span class="header-item is-dark-bg">
                 <a href="https://www.techhub.com/events/">Programmes</a>
               </span>
-              <span class="header-item is-dark-bg">
+            <span class="header-item is-dark-bg">
                 <a href="https://blog.techhub.com">Blog</a>
               </span>
-              <span class="header-item is-dark-bg">
+            <span class="header-item is-dark-bg">
                 <a href="https://www.techhub.com/contact-us/" class="button is-transparent">
                   Contact us
                 </a>
               </span>
-            </div>
           </div>
-        </header>
-      </div>
+        </div>
+      </header>
+    </div>
 
-      <div class="covervid-wrapper">
-        <video class="covervid-video" autoplay loop>
-          <source src="videos/bg_dark2.mp4" type="video/mp4">
-        </video>
-      </div>
+    <div class="covervid-wrapper">
+      <video class="covervid-video" autoplay loop>
+        <source src="videos/bg_dark2.mp4" type="video/mp4">
+      </video>
+    </div>
 
-      <!-- Hero content: will be in the middle -->
-      <div class="hero-content hero-home">
-        <div class="container">
-          <img src="https://d1e6a3jvdxo3ln.cloudfront.net/images/website/techhub_3d_logo_png.png" alt="Logo" class="logo-home">
-          <h1 class="title title-home is-th-font">
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-content hero-home">
+      <div class="container">
+        <img src="https://d1e6a3jvdxo3ln.cloudfront.net/images/website/techhub_3d_logo_png.png" alt="Logo" class="logo-home">
+        <h1 class="title title-home is-th-font">
             The global community<span class="is-hidden-desktop">&nbsp;</span><br class="is-hidden-mobile">for technology startups
           </h1>
-          <a href="#memberships" id="join-the-community" class="button is-home-cta is-medium">Join the Community</a>
-          <a href="https://www.techhub.com/events/" class="button is-home-cta is-medium">Attend an Event</a>
-        </div>
-        <div class="locations-button-mobile is-hidden-desktop" id="modal-locations-open">
-          Locations
-        </div>
-        <nav class="tabs is-centered tabs-home is-hidden-mobile">
-          <div class="container is-text-centered">
-            <ul>
-              <li>
-                <a href="https://bangalore.techhub.com">Bangalore</a>
-              </li>
-              <li>
-                <a href="https://bucharest.techhub.com">Bucharest</a>
-              </li>
-              <li>
-                <a href="https://london.techhub.com">London</a>
-              </li>
-              <li>
-                <a href="https://madrid.techhub.com">Madrid</a>
-              </li>
-              <li>
-                <a href="https://riga.techhub.com">Riga</a>
-              </li>
-              <li>
-                <a href="https://swansea.techhub.com">Swansea</a>
-              </li>
-              <li>
-                <a href="https://warsaw.techhub.com">Warsaw</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
+        <a href="#memberships" id="join-the-community" class="button is-home-cta is-medium">Join the Community</a>
+        <a href="https://www.techhub.com/events/" class="button is-home-cta is-medium">Attend an Event</a>
       </div>
-
-      <!-- Hero footer: will stick at the bottom -->
-      <div class="hero-footer hero-home"></div>
-    </section>
-
-    <section class="section">
-      <nav class="navbar navbar-stats">
-        <div class="navbar-item is-text-centered">
-          <p class="heading">Startups</p>
-          <p class="title">750+</p>
-        </div>
-        <div class="navbar-item is-text-centered">
-          <p class="heading">Nationalities</p>
-          <p class="title">60+</p>
-        </div>
-        <div class="navbar-item is-text-centered">
-          <p class="heading">Events</p>
-          <p class="title">365+ per year</p>
-        </div>
-        <div class="navbar-item is-text-centered">
-          <p class="heading">Members Raised</p>
-          <p class="title">$1b+</p>
+      <div class="locations-button-mobile is-hidden-desktop" id="modal-locations-open">
+        Locations
+      </div>
+      <nav class="tabs is-centered tabs-home is-hidden-mobile">
+        <div class="container is-text-centered">
+          <ul>
+            <li>
+              <a href="https://bangalore.techhub.com">Bangalore</a>
+            </li>
+            <li>
+              <a href="https://bucharest.techhub.com">Bucharest</a>
+            </li>
+            <li>
+              <a href="https://london.techhub.com">London</a>
+            </li>
+            <li>
+              <a href="https://madrid.techhub.com">Madrid</a>
+            </li>
+            <li>
+              <a href="https://riga.techhub.com">Riga</a>
+            </li>
+            <li>
+              <a href="https://swansea.techhub.com">Swansea</a>
+            </li>
+            <li>
+              <a href="https://warsaw.techhub.com">Warsaw</a>
+            </li>
+          </ul>
         </div>
       </nav>
-    </section>
+    </div>
 
-    <section class="section is-paddingless">
-      <!-- <h2 class="title is-text-centered">We help startups grow better, faster</h2> -->
-      <div class="columns columns-minimal-border">
-        <div class="column full-bg full-bg-global-community">
-          <div class="full-bg-text">
-            <h3 class="title">
+    <!-- Hero footer: will stick at the bottom -->
+    <div class="hero-footer hero-home"></div>
+  </section>
+
+  <section class="section">
+    <nav class="navbar navbar-stats">
+      <div class="navbar-item is-text-centered">
+        <p class="heading">Startups</p>
+        <p class="title">750+</p>
+      </div>
+      <div class="navbar-item is-text-centered">
+        <p class="heading">Nationalities</p>
+        <p class="title">60+</p>
+      </div>
+      <div class="navbar-item is-text-centered">
+        <p class="heading">Events</p>
+        <p class="title">365+ per year</p>
+      </div>
+      <div class="navbar-item is-text-centered">
+        <p class="heading">Members Raised</p>
+        <p class="title">$1b+</p>
+      </div>
+    </nav>
+  </section>
+
+  <section class="section is-paddingless">
+    <!-- <h2 class="title is-text-centered">We help startups grow better, faster</h2> -->
+    <div class="columns columns-minimal-border">
+      <div class="column full-bg full-bg-global-community">
+        <div class="full-bg-text">
+          <h3 class="title">
               Global Community
-            </h3>
-            TechHub is the global community for technology entrepreneurs and startups. We work with 750+ startups around the world to help them scale.
-          </div>
+            </h3> TechHub is the global community for technology entrepreneurs and startups. We work with 750+ startups around the world to help them scale.
         </div>
-        <div class="column full-bg full-bg-events">
-          <div class="full-bg-text">
-            <h3 class="title">
+      </div>
+      <div class="column full-bg full-bg-events">
+        <div class="full-bg-text">
+          <h3 class="title">
               Startup Support Programme
-            </h3>
-            We work hard to understand the needs of startups at all stages. Our startups core programme helps entrepreneurs learn, meet investors, test their ideas and collaborate with each other.
-          </div>
+            </h3> We work hard to understand the needs of startups at all stages. Our startup support programme helps entrepreneurs learn, meet investors, test their ideas and collaborate with each other.
         </div>
-        <div class="column full-bg full-bg-flex-space">
-          <div class="full-bg-text">
-            <h3 class="title">
+      </div>
+      <div class="column full-bg full-bg-flex-space">
+        <div class="full-bg-text">
+          <h3 class="title">
               Flexible Workspace
             </h3>The TechHub network enables members to work smarter, develop faster and increase their chances of startup success.
-          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="memberships" class="section section-membership is-paddingless">
-      <a href="">
-        <h2 class="title is-text-centered" style="margin-top:10px;margin-bottom:20px;">Become a Member!</h2>
-      </a>
-      <h3 class="subtitle is-text-centered">All TechHub memberships are global, giving you access to our startup support programmes & every TechHub in the world.</h3>
-      <div class="columns columns-minimal-border">
-        <div class="column full-bg hover full-bg-flex full-bg-membership">
-          <div class="full-bg-text">
-            <h3 class="title">
+  <section id="memberships" class="section section-membership is-paddingless">
+    <a href="">
+      <h2 class="title is-text-centered" style="margin-top:10px;margin-bottom:20px;">Become a Member!</h2>
+    </a>
+    <h3 class="subtitle is-text-centered">All TechHub memberships are global, giving you access to our startup support programmes & every TechHub in the world.</h3>
+    <div class="columns columns-minimal-border">
+      <div class="column full-bg hover full-bg-flex full-bg-membership">
+        <div class="full-bg-text">
+          <h3 class="title">
               Flex
-            </h3>
-            Lonely Founder? New to the ecosystem? Working from home? Join the global community and drop-in whenever you're around!
-          </div>
+            </h3> Lonely Founder? New to the ecosystem? Working from home? Join the global community and drop-in whenever you're around!
         </div>
-        <div class="column full-bg hover full-bg-resident full-bg-membership">
-          <div class="full-bg-text">
-            <h3 class="title">
+      </div>
+      <div class="column full-bg hover full-bg-resident full-bg-membership">
+        <div class="full-bg-text">
+          <h3 class="title">
               Resident
             </h3>Whether it's just you or as your team begins to grow, become part of the community with your own desk and 24/7 access.
-          </div>
-        </div>
-        <div class="column full-bg hover full-bg-team full-bg-membership">
-          <div class="full-bg-text">
-            <h3 class="title">
-              Team
-            </h3>
-            We understand the challenges of high growth startups too. Get your very own private space within TechHub and stay within the community as you grow!
-          </div>
         </div>
       </div>
-    </section>
+      <div class="column full-bg hover full-bg-team full-bg-membership">
+        <div class="full-bg-text">
+          <h3 class="title">
+              Team
+            </h3> We understand the challenges of high growth startups too. Get your very own private space within TechHub and stay within the community as you grow!
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section class="section small-padding">
-      <div class="container is-fluid">
-        <h2 class="title is-text-centered title-section">
+  <section class="section small-padding">
+    <div class="container is-fluid">
+      <h2 class="title is-text-centered title-section">
           Our Members & Alumni
         </h2>
-        <div class="container is-fluid">
-          <div class="carousel carousel-members">
-            <div class="card">
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-left">
-                    <figure class="image is-128x128">
-                      <a href="https://www.callsign.com/"><img src="images/logo_callsign.png" alt="Image"></a>
-                    </figure>
-                  </div>
-                  <div class="media-content">
-                    <p class="title is-6 is-text-right">Member</p>
-                  </div>
-                </div>
-                <div class="content">
-                  Our amazing members, Callsign, are rocking the world of encryption & authentication working with the world's leading financial institutions.
-                </div>
+    </div>
+    <div class="container is-fluid">
+      <div class="carousel carousel-members">
+        <div class="card">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-128x128">
+                  <a href="https://www.callsign.com/"><img src="images/logo_callsign.png" alt="Image"></a>
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-6 is-text-right">Member</p>
               </div>
             </div>
+            <div class="content">
+              Our amazing members, Callsign, are rocking the world of encryption & authentication working with the world's leading financial institutions.
+            </div>
+          </div>
+        </div>
 
-            <div class="card">
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-left">
-                    <figure class="image is-128x128">
-                      <a href="https://www.nexmo.com/"><img src="images/logo_nexmo.png" alt="Image"></a>
-                    </figure>
-                  </div>
-                  <div class="media-content">
-                    <p class="title is-6 is-text-right">Alumni</p>
-                  </div>
-                </div>
-                <div class="content">
-                  We are proud to have been home to one of the world's leading Voice and SMS API providers, who are an amazing part of our community.
-                </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-128x128">
+                  <a href="https://www.nexmo.com/"><img src="images/logo_nexmo.png" alt="Image"></a>
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-6 is-text-right">Alumni</p>
               </div>
             </div>
+            <div class="content">
+              We are proud to have been home to one of the world's leading Voice and SMS API providers, who are an amazing part of our community.
+            </div>
+          </div>
+        </div>
 
-            <div class="card">
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-left">
-                    <figure class="image is-128x128">
-                      <a href="http://divide.com/"><img src="images/logo_divide.png" alt="Image" style="margin-top:5px;"></a>
-                    </figure>
-                  </div>
-                  <div class="media-content">
-                    <p class="title is-6 is-text-right">Alumni</p>
-                  </div>
-                </div>
-                <div class="content">
-                  Now part of Google, Divide allows people to carry one device instead of two to work, making BYOD safe for everyone.
-                </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-128x128">
+                  <a href="http://divide.com/"><img src="images/logo_divide.png" alt="Image" style="margin-top:5px;"></a>
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-6 is-text-right">Alumni</p>
               </div>
             </div>
+            <div class="content">
+              Now part of Google, Divide allows people to carry one device instead of two to work, making BYOD safe for everyone.
+            </div>
+          </div>
+        </div>
 
-            <div class="card">
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-left">
-                    <figure class="image is-128x128">
-                      <a href="https://import.io"><img src="images/logo_import.png" alt="Image"></a>
-                    </figure>
-                  </div>
-                  <div class="media-content">
-                    <p class="title is-6 is-text-right">Alumni</p>
-                  </div>
-                </div>
-                <div class="content">
-                  The world's leading web data extraction platform for businesses and individuals. Started in TechHub and has since closed $17.3M in investment.
-                </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-128x128">
+                  <a href="https://import.io"><img src="images/logo_import.png" alt="Image"></a>
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-6 is-text-right">Alumni</p>
               </div>
             </div>
+            <div class="content">
+              The world's leading web data extraction platform for businesses and individuals. Started in TechHub and has since closed $17.3M in investment.
+            </div>
+          </div>
+        </div>
 
-            <div class="card">
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-left">
-                    <figure class="image is-128x128">
-                      <a href="https://www.trouva.com/"><img src="images/logo_trouva.png" alt="Image"></a>
-                    </figure>
-                  </div>
-                  <div class="media-content">
-                    <p class="title is-6 is-text-right">Member</p>
-                  </div>
-                </div>
-                <div class="content">
-                  The platform that allows you to find the best boutiques and independent shops. Doubled the team since joining our community
-                </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-128x128">
+                  <a href="https://www.trouva.com/"><img src="images/logo_trouva.png" alt="Image"></a>
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-6 is-text-right">Member</p>
               </div>
             </div>
+            <div class="content">
+              The platform that allows you to find the best boutiques and independent shops. Doubled the team since joining our community
+            </div>
+          </div>
+        </div>
 
-            <div class="card">
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-left">
-                    <figure class="image is-128x128">
-                      <a href="https://flat-club.com"><img src="images/logo_flatclub.png" alt="Image"></a>
-                    </figure>
-                  </div>
-                  <div class="media-content">
-                    <p class="title is-6 is-text-right">Member</p>
-                  </div>
-                </div>
-                <div class="content">
-                  Our members, Flatclub, are the best marketplace that brings together people with common values and needs to find medium term accommodation
-                </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-128x128">
+                  <a href="https://flat-club.com"><img src="images/logo_flatclub.png" alt="Image"></a>
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-6 is-text-right">Member</p>
               </div>
             </div>
+            <div class="content">
+              Our members, Flatclub, are the best marketplace that brings together people with common values and needs to find medium term accommodation
+            </div>
+          </div>
+        </div>
 
-            <div class="card">
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-left">
-                    <figure class="image is-128x128">
-                      <a href="http://www.kayako.com/"><img src="images/logo_kayako.png" alt="Image"></a>
-                    </figure>
-                  </div>
-                  <div class="media-content">
-                    <p class="title is-6 is-text-right">Member</p>
-                  </div>
-                </div>
-                <div class="content">
-                  We are proud to be home to Kayako, one of the world's most widely used web-based help desk and customer service software.
-                </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-128x128">
+                  <a href="http://www.kayako.com/"><img src="images/logo_kayako.png" alt="Image"></a>
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-6 is-text-right">Member</p>
               </div>
             </div>
+            <div class="content">
+              We are proud to be home to Kayako, one of the world's most widely used web-based help desk and customer service software.
+            </div>
+          </div>
+        </div>
 
-            <div class="card">
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-left">
-                    <figure class="image is-128x128">
-                      <a href="http://www.buzzmyvideos.com/"><img src="images/logo_bmv.png" alt="Image"></a>
-                    </figure>
-                  </div>
-                  <div class="media-content">
-                    <p class="title is-6 is-text-right">Member</p>
-                  </div>
-                </div>
-                <div class="content">
-                  Created by former YouTubers, BuzzMyVideos empowers content creators to grow their channels to the next level. TechHub Members since 2012.
-                </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-128x128">
+                  <a href="http://www.buzzmyvideos.com/"><img src="images/logo_bmv.png" alt="Image"></a>
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-6 is-text-right">Member</p>
               </div>
             </div>
+            <div class="content">
+              Created by former YouTubers, BuzzMyVideos empowers content creators to grow their channels to the next level. TechHub Members since 2012.
+            </div>
+          </div>
+        </div>
 
-            <div class="card">
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-left">
-                    <figure class="image is-128x128">
-                      <a href="https://www.jukedeck.com"><img src="images/logo_jukedeck.png" alt="Image"></a>
-                    </figure>
-                  </div>
-                  <div class="media-content">
-                    <p class="title is-6 is-text-right">Member</p>
-                  </div>
-                </div>
-                <div class="content">
-                  Jukedeck's AI platform creates incredible royalty-free soundtracks. Amazing community players! Winners of the main prize at TC Disrupt, Le Web & Pitch@Palace.
-                </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-128x128">
+                  <a href="https://www.jukedeck.com"><img src="images/logo_jukedeck.png" alt="Image"></a>
+                </figure>
               </div>
+              <div class="media-content">
+                <p class="title is-6 is-text-right">Member</p>
+              </div>
+            </div>
+            <div class="content">
+              Jukedeck's AI platform creates incredible royalty-free soundtracks. Amazing community players! Winners of the main prize at TC Disrupt, Le Web & Pitch@Palace.
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="newsletter" class="hero is-primary is-bold">
-      <div class="hero-content">
-        <div class="container">
-          <div class="columns is-vcentered">
-            <div class="column is-5 is-left">
-              <p class="title">TechHub
-                <strong>News</strong>
-              </p>
-              <p class="subtitle">Get to know what's happening in our Global Community!</p>
-            </div>
-            <div class="column">
-              <form action="https://techhub.us1.list-manage.com/subscribe/post-json?u=031b1985139bd9da3b27eff77&id=565a99f7b0" id="mce-form">
-                <div class="columns is-desktop">
-                  <div class="column is-12">
-                    <div class="control has-icon">
-                      <input type="email" value="" name="EMAIL" class="input" id="mce-EMAIL" placeholder="email address" required="" aria-required="true">
-                      <i class="fa fa-envelope"></i>
-                    </div>
+  <section id="newsletter" class="hero is-primary is-bold">
+    <div class="hero-content">
+      <div class="container">
+        <div class="columns is-vcentered">
+          <div class="column is-5 is-left">
+            <p class="title">TechHub
+              <strong>News</strong>
+            </p>
+            <p class="subtitle">Get to know what's happening in our Global Community!</p>
+          </div>
+          <div class="column">
+            <form action="https://techhub.us1.list-manage.com/subscribe/post-json?u=031b1985139bd9da3b27eff77&id=565a99f7b0" id="mce-form">
+              <div class="columns is-desktop">
+                <div class="column is-12">
+                  <div class="control has-icon">
+                    <input type="email" value="" name="EMAIL" class="input" id="mce-EMAIL" placeholder="email address" required="" aria-required="true">
+                    <i class="fa fa-envelope"></i>
                   </div>
                 </div>
-                <div class="columns">
-                  <div class="column is-8">
-                    <div class="control control-full">
-                      <span class="select">
+              </div>
+              <div class="columns">
+                <div class="column is-8">
+                  <div class="control control-full">
+                    <span class="select">
                         <select id="select-location-newsletter" required="">
                           <option value="" disabled selected>Select your location</option>
                           <option value="global">Global</option>
@@ -521,214 +510,214 @@
                           <option value="warsaw">Warsaw</option>
                         </select>
                       </span>
-                    </div>
-                  </div>
-                  <div class="column is-4">
-                    <div class="control control-full">
-                      <button id="mce-subscribe-button" type="submit" name="subscribe" class="button is-primary is-outlined is-inverted">Subscribe</button>
-                    </div>
                   </div>
                 </div>
-              </form>
-              <div class="mce-responses is-hidden">
-                <div class="notification is-danger response is-hidden" id="mce-error-response"></div>
-                <div class="notification is-success response is-hidden" id="mce-success-response"></div>
+                <div class="column is-4">
+                  <div class="control control-full">
+                    <button id="mce-subscribe-button" type="submit" name="subscribe" class="button is-primary is-outlined is-inverted">Subscribe</button>
+                  </div>
+                </div>
               </div>
+            </form>
+            <div class="mce-responses is-hidden">
+              <div class="notification is-danger response is-hidden" id="mce-error-response"></div>
+              <div class="notification is-success response is-hidden" id="mce-success-response"></div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section section-partners is-paddingless" id="partners">
-      <div class="container">
-        <h2 class="title is-5 is-text-centered">Global Partner</h2>
-        <div class="is-text-centered">
-          <a href="https://www.googleforentrepreneurs.com"><img class="image img-logo-gfe" src="images/logo_gfe.png" alt="Google for Entrepreneurs"></a>
-        </div>
-        <div class="is-text-centered">
-          <h2 class="title is-5 is-text-centered partner-bt">Proud to partner with</h2>
-          <a href="http://www.btplc.com/btinfinitylab/"><img class="image img-logo-bt" src="images/logo_bt.png" alt="BT"></a>
-        </div>
+  <section class="section section-partners is-paddingless" id="partners">
+    <div class="container">
+      <h2 class="title is-5 is-text-centered">Global Partner</h2>
+      <div class="is-text-centered">
+        <a href="https://www.googleforentrepreneurs.com"><img class="image img-logo-gfe" src="images/logo_gfe.png" alt="Google for Entrepreneurs"></a>
       </div>
-    </section>
+      <div class="is-text-centered">
+        <h2 class="title is-5 is-text-centered partner-bt">Proud to partner with</h2>
+        <a href="http://www.btplc.com/btinfinitylab/"><img class="image img-logo-bt" src="images/logo_bt.png" alt="BT"></a>
+      </div>
+    </div>
+  </section>
 
-    <footer class="footer small-padding-bottom">
-      <div class="columns">
-        <div class="column">
-          <div class="tabs is-centered">
-            <div class="container is-fluid is-text-centered">
-              <ul>
-                <li>
-                  <a href="https://www.techhub.com/about-us/">About Us</a>
-                </li>
-                <li>
-                  <a href="https://www.techhub.com/staff/">Team</a>
-                </li>
-                <!-- <li><a href="https://www.techhub.com/gallery/">Gallery</a></li> -->
-                <li>
-                  <a href="https://www.techhub.com/jobs/">Jobs</a>
-                </li>
-                <li>
-                  <a href="https://www.techhub.com/press/">Press</a>
-                </li>
-                <li>
-                  <a href="https://www.techhub.com/partners/">Partners</a>
-                </li>
-              </ul>
-            </div>
+  <footer class="footer small-padding-bottom">
+    <div class="columns">
+      <div class="column">
+        <div class="tabs is-centered">
+          <div class="container is-fluid is-text-centered">
+            <ul>
+              <li>
+                <a href="https://www.techhub.com/about-us/">About Us</a>
+              </li>
+              <li>
+                <a href="https://www.techhub.com/staff/">Team</a>
+              </li>
+              <!-- <li><a href="https://www.techhub.com/gallery/">Gallery</a></li> -->
+              <li>
+                <a href="https://www.techhub.com/jobs/">Jobs</a>
+              </li>
+              <li>
+                <a href="https://www.techhub.com/press/">Press</a>
+              </li>
+              <li>
+                <a href="https://www.techhub.com/partners/">Partners</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-      <div class="columns">
-        <div class="column is-text-centered footer-icons">
-          <a class="modal-social-open" href="#">
-            <span class="icon">
+    </div>
+    <div class="columns">
+      <div class="column is-text-centered footer-icons">
+        <a class="modal-social-open" href="#">
+          <span class="icon">
               <i class="fa fa-facebook-official"></i>
             </span>
-          </a>
-          <a class="modal-social-open" href="#">
-            <span class="icon">
+        </a>
+        <a class="modal-social-open" href="#">
+          <span class="icon">
               <i class="fa fa-twitter-square"></i>
             </span>
-          </a>
-          <a class="modal-social-open" href="#">
-            <span class="icon">
+        </a>
+        <a class="modal-social-open" href="#">
+          <span class="icon">
               <i class="fa fa-instagram"></i>
             </span>
-          </a>
-        </div>
+        </a>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <div id="modal-social" class="modal">
-      <div class="modal-background"></div>
-      <div class="modal-container">
-        <div class="modal-content">
-          <div class="container">
-            <div class="columns">
-              <div class="column">
-                <div class="message is-facebook is-modal-social">
-                  <div class="message-header">
-                    <i class="fa fa-facebook"></i>
-                  </div>
-                  <div class="message-body">
-                    <ul>
-                      <li>
-                        <a href="https://www.facebook.com/TechHub">London</a>
-                      </li>
-                      <li>
-                        <a href="https://www.facebook.com/TechHub.Bucharest">Bucharest</a>
-                      </li>
-                      <li>
-                        <a href="https://www.facebook.com/TechHubBangalore">Bangalore</a>
-                      </li>
-                      <li>
-                        <a href="https://www.facebook.com/TechHubMadrid">Madrid</a>
-                      </li>
-                      <li>
-                        <a href="https://www.facebook.com/TechHubRiga">Riga</a>
-                      </li>
-                      <li>
-                        <a href="https://www.facebook.com/TechHubSwansea">Swansea</a>
-                      </li>
-                      <li>
-                        <a href="https://www.facebook.com/TechHubWarsaw">Warsaw</a>
-                      </li>
-                    </ul>
-                  </div>
+  <div id="modal-social" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-container">
+      <div class="modal-content">
+        <div class="container">
+          <div class="columns">
+            <div class="column">
+              <div class="message is-facebook is-modal-social">
+                <div class="message-header">
+                  <i class="fa fa-facebook"></i>
+                </div>
+                <div class="message-body">
+                  <ul>
+                    <li>
+                      <a href="https://www.facebook.com/TechHub">London</a>
+                    </li>
+                    <li>
+                      <a href="https://www.facebook.com/TechHub.Bucharest">Bucharest</a>
+                    </li>
+                    <li>
+                      <a href="https://www.facebook.com/TechHubBangalore">Bangalore</a>
+                    </li>
+                    <li>
+                      <a href="https://www.facebook.com/TechHubMadrid">Madrid</a>
+                    </li>
+                    <li>
+                      <a href="https://www.facebook.com/TechHubRiga">Riga</a>
+                    </li>
+                    <li>
+                      <a href="https://www.facebook.com/TechHubSwansea">Swansea</a>
+                    </li>
+                    <li>
+                      <a href="https://www.facebook.com/TechHubWarsaw">Warsaw</a>
+                    </li>
+                  </ul>
                 </div>
               </div>
-              <div class="column">
-                <div class="message is-twitter is-modal-social">
-                  <div class="message-header">
-                    <i class="fa fa-twitter"></i>
-                  </div>
-                  <div class="message-body">
-                    <ul>
-                      <li>
-                        <a href="https://twitter.com/TechHub">London</a>
-                      </li>
-                      <li>
-                        <a href="https://twitter.com/TechHubBuc">Bucharest</a>
-                      </li>
-                      <li>
-                        <a href="https://twitter.com/TechHubBLR">Bangalore</a>
-                      </li>
-                      <li>
-                        <a href="https://twitter.com/TechHubMadrid">Madrid</a>
-                      </li>
-                      <li>
-                        <a href="https://twitter.com/TechHubRiga">Riga</a>
-                      </li>
-                      <li>
-                        <a href="https://twitter.com/TechHubSwansea">Swansea</a>
-                      </li>
-                      <li>
-                        <a href="https://twitter.com/TechHubWarsaw">Warsaw</a>
-                      </li>
-                    </ul>
-                  </div>
+            </div>
+            <div class="column">
+              <div class="message is-twitter is-modal-social">
+                <div class="message-header">
+                  <i class="fa fa-twitter"></i>
+                </div>
+                <div class="message-body">
+                  <ul>
+                    <li>
+                      <a href="https://twitter.com/TechHub">London</a>
+                    </li>
+                    <li>
+                      <a href="https://twitter.com/TechHubBuc">Bucharest</a>
+                    </li>
+                    <li>
+                      <a href="https://twitter.com/TechHubBLR">Bangalore</a>
+                    </li>
+                    <li>
+                      <a href="https://twitter.com/TechHubMadrid">Madrid</a>
+                    </li>
+                    <li>
+                      <a href="https://twitter.com/TechHubRiga">Riga</a>
+                    </li>
+                    <li>
+                      <a href="https://twitter.com/TechHubSwansea">Swansea</a>
+                    </li>
+                    <li>
+                      <a href="https://twitter.com/TechHubWarsaw">Warsaw</a>
+                    </li>
+                  </ul>
                 </div>
               </div>
-              <div class="column">
-                <div class="message is-instagram is-modal-social">
-                  <div class="message-header">
-                    <i class="fa fa-instagram"></i>
-                  </div>
-                  <div class="message-body">
-                    <ul>
-                      <li>
-                        <a href="https://www.instagram.com/techhublondon/">London</a>
-                      </li>
-                      <li>
-                        <a href="https://www.instagram.com/techhubblr/">Bangalore</a>
-                      </li>
-                      <li>
-                        <a href="https://www.instagram.com/techhubmadrid/">Madrid</a>
-                      </li>
-                      <li>
-                        <a href="https://www.instagram.com/techhubswansea/">Swansea</a>
-                      </li>
-                    </ul>
-                  </div>
+            </div>
+            <div class="column">
+              <div class="message is-instagram is-modal-social">
+                <div class="message-header">
+                  <i class="fa fa-instagram"></i>
+                </div>
+                <div class="message-body">
+                  <ul>
+                    <li>
+                      <a href="https://www.instagram.com/techhublondon/">London</a>
+                    </li>
+                    <li>
+                      <a href="https://www.instagram.com/techhubblr/">Bangalore</a>
+                    </li>
+                    <li>
+                      <a href="https://www.instagram.com/techhubmadrid/">Madrid</a>
+                    </li>
+                    <li>
+                      <a href="https://www.instagram.com/techhubswansea/">Swansea</a>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <button id="modal-social-close" class="modal-close"></button>
     </div>
+    <button id="modal-social-close" class="modal-close"></button>
+  </div>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function (b, o, i, l, e, r) {
-        b.GoogleAnalyticsObject = l;
-        b[l] || (b[l] = function () {
-          (b[l].q = b[l].q || []).push(arguments)
-        });
-        b[l].l = +new Date;
-        e = o.createElement(i);
-        r = o.getElementsByTagName(i)[0];
-        e.src = 'https://www.google-analytics.com/analytics.js';
-        r.parentNode.insertBefore(e, r)
-      }(window, document, 'script', 'ga'));
-      ga('create', 'UA-33525349-1', 'techhub.com');
-      ga('send', 'pageview');
-    </script>
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <script>
+    (function(b, o, i, l, e, r) {
+      b.GoogleAnalyticsObject = l;
+      b[l] || (b[l] = function() {
+        (b[l].q = b[l].q || []).push(arguments)
+      });
+      b[l].l = +new Date;
+      e = o.createElement(i);
+      r = o.getElementsByTagName(i)[0];
+      e.src = 'https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e, r)
+    }(window, document, 'script', 'ga'));
+    ga('create', 'UA-33525349-1', 'techhub.com');
+    ga('send', 'pageview');
+  </script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="/bower_components/slick-carousel/slick/slick.js"></script>
-    <script src="/bower_components/covervid/covervid.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <!-- build:js scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="/bower_components/slick-carousel/slick/slick.js"></script>
+  <script src="/bower_components/covervid/covervid.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
 
-    <!-- build:js scripts/main.js -->
-    <script src="scripts/main.js"></script>
-    <!-- endbuild -->
-  </body>
+  <!-- build:js scripts/main.js -->
+  <script src="scripts/main.js"></script>
+  <!-- endbuild -->
+</body>
 
 </html>

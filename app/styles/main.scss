@@ -50,6 +50,9 @@ body {
   background-color: #000;
   background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, .95)),url('../images/bg_team.jpg');
   background-position: center;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
   @media screen and (min-width: 35em) {
     background: #000;
   }

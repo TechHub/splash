@@ -30,54 +30,6 @@
       wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js';
       s.parentNode.insertBefore(wf, s);
     })(document);
-    /*! loadCSS: load a CSS file asynchronously. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT */
-    ! function(e) {
-      "use strict";
-      var n = function(n, t, i) {
-        function o(e) {
-          return r.body ? e() : void setTimeout(function() {
-            o(e)
-          })
-        }
-        var d,
-          r = e.document,
-          a = r.createElement("link"),
-          l = i || "all";
-        if (t)
-          d = t;
-        else {
-          var f = (r.body || r.getElementsByTagName("head")[0]).childNodes;
-          d = f[f.length - 1]
-        }
-        var s = r.styleSheets;
-        a.rel = "stylesheet",
-          a.href = n,
-          a.media = "only x",
-          o(function() {
-            d.parentNode.insertBefore(a, t ? d : d.nextSibling)
-          });
-        var u = function(e) {
-          for (var n = a.href, t = s.length; t--;)
-            if (s[t].href === n)
-              return e();
-          setTimeout(function() {
-            u(e)
-          })
-        };
-        return a.addEventListener && a.addEventListener("load", function() {
-            this.media = l
-          }),
-          a.onloadcssdefined = u,
-          u(function() {
-            a.media !== l && (a.media = l)
-          }),
-          a
-      };
-      "undefined" != typeof exports
-        ?
-        exports.loadCSS = n : e.loadCSS = n
-    }("undefined" != typeof global ? global : this);
-    loadCSS('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
   </script>
   <!-- Place favicon.ico in the root directory -->
 
@@ -149,7 +101,9 @@
       </ul>
     </nav>
   </div>
-  <section class="hero is-fullheight hero-home">
+  <section class="hero is-fullheight hero-home" style="background-image: url('images/bg_jobs.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;">
     <div class="hero-header">
       <header class="header">
         <div class="container container-header">
@@ -178,308 +132,20 @@
       </header>
     </div>
 
-    <div class="covervid-wrapper">
-      <video class="covervid-video" autoplay loop>
-        <source src="videos/bg_dark2.mp4" type="video/mp4">
-      </video>
-    </div>
-
     <!-- Hero content: will be in the middle -->
     <div class="hero-content hero-home">
       <div class="container">
-        <img src="https://d1e6a3jvdxo3ln.cloudfront.net/images/website/techhub_3d_logo_png.png" alt="Logo" class="logo-home">
         <h1 class="title title-home is-th-font">
-            The global community<span class="is-hidden-desktop">&nbsp;</span><br class="is-hidden-mobile">for technology startups
+            Be part of this awesome team
           </h1>
-        <a href="#memberships" id="join-the-community" class="button is-home-cta is-medium">Join the Community</a>
-        <a href="https://www.techhub.com/events/" class="button is-home-cta is-medium">Attend an Event</a>
       </div>
-      <div class="locations-button-mobile is-hidden-desktop" id="modal-locations-open">
-        Locations
-      </div>
-      <nav class="tabs is-centered tabs-home is-hidden-mobile">
-        <div class="container is-text-centered">
-          <ul>
-            <li>
-              <a href="https://bangalore.techhub.com">Bangalore</a>
-            </li>
-            <li>
-              <a href="https://bucharest.techhub.com">Bucharest</a>
-            </li>
-            <li>
-              <a href="https://london.techhub.com">London</a>
-            </li>
-            <li>
-              <a href="https://madrid.techhub.com">Madrid</a>
-            </li>
-            <li>
-              <a href="https://riga.techhub.com">Riga</a>
-            </li>
-            <li>
-              <a href="https://swansea.techhub.com">Swansea</a>
-            </li>
-            <li>
-              <a href="https://warsaw.techhub.com">Warsaw</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
     </div>
 
     <!-- Hero footer: will stick at the bottom -->
     <div class="hero-footer hero-home"></div>
   </section>
 
-  <section class="section">
-    <nav class="navbar navbar-stats">
-      <div class="navbar-item is-text-centered">
-        <p class="heading">Startups</p>
-        <p class="title">750+</p>
-      </div>
-      <div class="navbar-item is-text-centered">
-        <p class="heading">Nationalities</p>
-        <p class="title">60+</p>
-      </div>
-      <div class="navbar-item is-text-centered">
-        <p class="heading">Events</p>
-        <p class="title">1000+ per year</p>
-      </div>
-      <div class="navbar-item is-text-centered">
-        <p class="heading">Members Raised</p>
-        <p class="title">$1b+</p>
-      </div>
-    </nav>
-  </section>
 
-  <section class="section is-paddingless">
-    <!-- <h2 class="title is-text-centered">We help startups grow better, faster</h2> -->
-    <div class="columns columns-minimal-border">
-      <div class="column full-bg full-bg-global-community">
-        <div class="full-bg-text">
-          <h3 class="title">
-              Global Community
-            </h3> TechHub is the global community for technology entrepreneurs and startups. We work with 750+ startups around the world to help them scale.
-        </div>
-      </div>
-      <div class="column full-bg full-bg-events">
-        <div class="full-bg-text">
-          <h3 class="title">
-              Startup Support Programme
-            </h3> We work hard to understand the needs of startups at all stages. Our startup support programme helps entrepreneurs learn, meet investors, test their ideas and collaborate with each other.
-        </div>
-      </div>
-      <div class="column full-bg full-bg-flex-space">
-        <div class="full-bg-text">
-          <h3 class="title">
-              Flexible Workspace
-            </h3>The TechHub network enables members to work smarter, develop faster and increase their chances of startup success.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="memberships" class="section section-membership is-paddingless">
-    <a href="">
-      <h2 class="title is-text-centered" style="margin-top:10px;margin-bottom:20px;">Become a Member!</h2>
-    </a>
-    <h3 class="subtitle is-text-centered">All TechHub memberships are global, giving you access to our startup support programmes & every TechHub in the world.</h3>
-    <div class="columns columns-minimal-border">
-      <div class="column full-bg hover full-bg-flex full-bg-membership">
-        <div class="full-bg-text">
-          <h3 class="title">
-              Flex
-            </h3> Lonely Founder? New to the ecosystem? Working from home? Join the global community and drop-in whenever you're around!
-        </div>
-      </div>
-      <div class="column full-bg hover full-bg-resident full-bg-membership">
-        <div class="full-bg-text">
-          <h3 class="title">
-              Resident
-            </h3>Whether it's just you or as your team begins to grow, become part of the community with your own desk and 24/7 access.
-        </div>
-      </div>
-      <div class="column full-bg hover full-bg-team full-bg-membership">
-        <div class="full-bg-text">
-          <h3 class="title">
-              Team
-            </h3> We understand the challenges of high growth startups too. Get your very own private space within TechHub and stay within the community as you grow!
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section small-padding">
-    <div class="container is-fluid">
-      <h2 class="title is-text-centered title-section">
-          Our Members & Alumni
-        </h2>
-    </div>
-    <div class="container is-fluid">
-      <div class="carousel carousel-members">
-        <div class="card">
-          <div class="card-content">
-            <div class="media">
-              <div class="media-left">
-                <figure class="image is-128x128">
-                  <a href="https://www.callsign.com/"><img src="images/logo_callsign.png" alt="Image"></a>
-                </figure>
-              </div>
-              <div class="media-content">
-                <p class="title is-6 is-text-right">Member</p>
-              </div>
-            </div>
-            <div class="content">
-              Our amazing members, Callsign, are rocking the world of encryption & authentication working with the world's leading financial institutions.
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-content">
-            <div class="media">
-              <div class="media-left">
-                <figure class="image is-128x128">
-                  <a href="https://www.nexmo.com/"><img src="images/logo_nexmo.png" alt="Image"></a>
-                </figure>
-              </div>
-              <div class="media-content">
-                <p class="title is-6 is-text-right">Alumni</p>
-              </div>
-            </div>
-            <div class="content">
-              We are proud to have been home to one of the world's leading Voice and SMS API providers, who are an amazing part of our community.
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-content">
-            <div class="media">
-              <div class="media-left">
-                <figure class="image is-128x128">
-                  <a href="http://divide.com/"><img src="images/logo_divide.png" alt="Image" style="margin-top:5px;"></a>
-                </figure>
-              </div>
-              <div class="media-content">
-                <p class="title is-6 is-text-right">Alumni</p>
-              </div>
-            </div>
-            <div class="content">
-              Now part of Google, Divide allows people to carry one device instead of two to work, making BYOD safe for everyone.
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-content">
-            <div class="media">
-              <div class="media-left">
-                <figure class="image is-128x128">
-                  <a href="https://import.io"><img src="images/logo_import.png" alt="Image"></a>
-                </figure>
-              </div>
-              <div class="media-content">
-                <p class="title is-6 is-text-right">Alumni</p>
-              </div>
-            </div>
-            <div class="content">
-              The world's leading web data extraction platform for businesses and individuals. Started in TechHub and has since closed $17.3M in investment.
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-content">
-            <div class="media">
-              <div class="media-left">
-                <figure class="image is-128x128">
-                  <a href="https://www.trouva.com/"><img src="images/logo_trouva.png" alt="Image"></a>
-                </figure>
-              </div>
-              <div class="media-content">
-                <p class="title is-6 is-text-right">Member</p>
-              </div>
-            </div>
-            <div class="content">
-              The platform that allows you to find the best boutiques and independent shops. Doubled the team since joining our community
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-content">
-            <div class="media">
-              <div class="media-left">
-                <figure class="image is-128x128">
-                  <a href="https://flat-club.com"><img src="images/logo_flatclub.png" alt="Image"></a>
-                </figure>
-              </div>
-              <div class="media-content">
-                <p class="title is-6 is-text-right">Member</p>
-              </div>
-            </div>
-            <div class="content">
-              Our members, Flatclub, are the best marketplace that brings together people with common values and needs to find medium term accommodation
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-content">
-            <div class="media">
-              <div class="media-left">
-                <figure class="image is-128x128">
-                  <a href="http://www.kayako.com/"><img src="images/logo_kayako.png" alt="Image"></a>
-                </figure>
-              </div>
-              <div class="media-content">
-                <p class="title is-6 is-text-right">Member</p>
-              </div>
-            </div>
-            <div class="content">
-              We are proud to be home to Kayako, one of the world's most widely used web-based help desk and customer service software.
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-content">
-            <div class="media">
-              <div class="media-left">
-                <figure class="image is-128x128">
-                  <a href="http://www.buzzmyvideos.com/"><img src="images/logo_bmv.png" alt="Image"></a>
-                </figure>
-              </div>
-              <div class="media-content">
-                <p class="title is-6 is-text-right">Member</p>
-              </div>
-            </div>
-            <div class="content">
-              Created by former YouTubers, BuzzMyVideos empowers content creators to grow their channels to the next level. TechHub Members since 2012.
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-content">
-            <div class="media">
-              <div class="media-left">
-                <figure class="image is-128x128">
-                  <a href="https://www.jukedeck.com"><img src="images/logo_jukedeck.png" alt="Image"></a>
-                </figure>
-              </div>
-              <div class="media-content">
-                <p class="title is-6 is-text-right">Member</p>
-              </div>
-            </div>
-            <div class="content">
-              Jukedeck's AI platform creates incredible royalty-free soundtracks. Amazing community players! Winners of the main prize at TC Disrupt, Le Web & Pitch@Palace.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <section id="newsletter" class="hero is-primary is-bold">
     <div class="hero-content">
@@ -714,15 +380,9 @@
   </script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  <!-- build:js scripts/vendor.js -->
-  <!-- bower:js -->
-  <script src="/bower_components/slick-carousel/slick/slick.js"></script>
-  <script src="/bower_components/covervid/covervid.js"></script>
-  <!-- endbower -->
-  <!-- endbuild -->
 
-  <!-- build:js scripts/main.js -->
-  <script src="scripts/main.js"></script>
+  <!-- build:js scripts/jobs.js -->
+  <script src="scripts/jobs.js"></script>
   <!-- endbuild -->
 </body>
 

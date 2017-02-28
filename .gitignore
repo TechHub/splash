@@ -4,7 +4,5 @@ dist
 .sass-cache
 bower_components
 test/bower_components
-awsConfig.json
-.awspublish-th-splash
-deployConfig.json
+deployConfig.js
 

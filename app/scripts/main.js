@@ -2,7 +2,18 @@
   'use strict';
 
   // link membership boxes
-  $('.full-bg-membership').click(function() {
+  $('.full-bg-flex').click(function() {
+    ga('send', 'event', 'main_flex', 'click');
+    window.open('https://apply.techhub.com');
+  });
+
+  $('.full-bg-resident').click(function() {
+    ga('send', 'event', 'main_resident', 'click');
+    window.open('https://apply.techhub.com');
+  });
+
+  $('.full-bg-team').click(function() {
+    ga('send', 'event', 'main_team', 'click');
     window.open('https://apply.techhub.com');
   });
 
@@ -11,6 +22,7 @@
 
   // smooth scroll
   $('#join-the-community').click(function() {
+    ga('send', 'event', 'join_community', 'click');
     if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');

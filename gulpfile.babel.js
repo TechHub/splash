@@ -14,23 +14,7 @@ import s3Index from 'gulp-s3-index';
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
-const awsConfig = JSON.parse(fs.readFileSync('./awsConfig.json'));
-const deployConfig = JSON.parse(fs.readFileSync('./deployConfig.json'));
-
-const publisher = $.awspublish.create({
-  'params': {
-    'Bucket': 'th-splash',
-  },
-  'accessKeyId': awsConfig.key,
-  'secretAccessKey': awsConfig.secret,
-});
-
-const cloudfrontConfig = {
-  'accessKeyId': awsConfig.key,
-  'secretAccessKey': awsConfig.secret,
-  'distributionId': awsConfig.distributionId,
-  'bucket':'th-splash',
-};
+const deployConfig = require('./deployConfig');
 
 gulp.task('styles', () => {
   return gulp.src('app/styles/*.scss')
@@ -126,12 +110,11 @@ gulp.task('images', () => {
     .pipe(gulp.dest('dist/images'));
 });
 
-gulp.task('fonts', () => {
-  return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2}', function(err) {})
-      .concat('app/fonts/**/*'))
-    .pipe(gulp.dest('.tmp/fonts'))
-    .pipe(gulp.dest('dist/fonts'));
-});
+// gulp.task('fonts', () => {
+//   return gulp.src('app/fonts/**/*')
+//     .pipe(gulp.dest('.tmp/fonts'))
+//     .pipe(gulp.dest('dist/fonts'));
+// });
 
 gulp.task('videos', () => {
   return gulp.src('app/videos/*.*')
@@ -149,7 +132,7 @@ gulp.task('extras', () => {
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
-gulp.task('serve', ['styles', 'scripts', 'fonts'], () => {
+gulp.task('serve', ['styles', 'scripts'], () => {
   browserSync({
     notify: false,
     port: 9000,
@@ -165,13 +148,10 @@ gulp.task('serve', ['styles', 'scripts', 'fonts'], () => {
     'app/*.html',
     '.tmp/scripts/**/*.js',
     'app/images/**/*',
-    '.tmp/fonts/**/*'
   ]).on('change', reload);
 
   gulp.watch('app/styles/**/*.scss', ['styles']);
   gulp.watch('app/scripts/**/*.js', ['scripts']);
-  gulp.watch('app/fonts/**/*', ['fonts']);
-  gulp.watch('bower.json', ['wiredep', 'fonts']);
 });
 
 gulp.task('serve:dist', () => {
@@ -201,25 +181,6 @@ gulp.task('serve:test', ['scripts'], () => {
   gulp.watch('app/scripts/**/*.js', ['scripts']);
   gulp.watch('test/spec/**/*.js').on('change', reload);
   gulp.watch('test/spec/**/*.js', ['lint:test']);
-});
-
-gulp.task('publish', () => {
-  // define custom headers
-  const headers = {
-    'Cache-Control': 'max-age=315360000, no-transform, public'
-  };
-
-  let revAll = new RevAll({ dontRenameFile: [/^\/favicon.ico$/g, 'robots.txt', 'apple-touch-icon.png'], });
-
-  return gulp.src('dist/**/*.*')
-    // .pipe(revAll.revision())
-    .pipe($.awspublish.gzip())
-    .pipe(publisher.publish(headers))
-    .pipe(publisher.sync())
-    .pipe(publisher.cache())
-    .pipe($.awspublish.reporter())
-    .pipe($.cloudfront(cloudfrontConfig))
-    // .pipe(s3Index(cloudfrontConfig));
 });
 
 gulp.task('sftp_staging', function () {
@@ -255,7 +216,7 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['lint', 'html', 'images', 'fonts', 'videos', 'extras'], () => {
+gulp.task('build', ['lint', 'html', 'images', 'videos', 'extras'], () => {
   return gulp.src('dist/**/*').pipe($.size({
     title: 'build',
     gzip: true

@@ -91,9 +91,49 @@
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
 
+  <script>
+    window.geolocation = "__GEOLOCATION__";
+  </script>
+
 </head>
 
 <body>
+
+  <div id="bubbleUSA" class="bubble is-hidden animated fadeInLeft" style="position: absolute; top: 20px; left: 20px; z-index: 1999; background-color:rgba(255,255,255,.80)">
+    <div class="card-content">
+      <div class="content">
+        <div style="position: absolute; top: 10px; right: 10px">
+          <button id="closeUSA" class="delete"></button>
+        </div>
+        Want to know what TechHub has coming up in the US?
+      </div>
+      <div class="field">
+        <p class="control">
+          <label class="radio">
+            <input type="radio" id="radioUSA1">
+            Investor
+          </label>
+          <label class="radio">
+            <input type="radio" id="radioUSA2" checked>
+            Startup
+          </label>
+          <label class="radio">
+            <input type="radio" id="radioUSA3">
+            Other
+          </label>
+        </p>
+        <p class="control">
+          <input id="emailUSA" type="text" class="input" placeholder="Your Email">
+        </p>
+        <button id="btnUSA" class="button is-primary" style="font-weight:500">
+          Tell me more
+        </button>
+      </div>
+      <p id="thanksUSA" class="is-hidden" style="margin-top:10px">
+        Thanks we'll be in touch!
+      </p>
+    </div>
+  </div>
 
   <div id="modal-locations" class="modal">
     <div class="modal-background"></div>

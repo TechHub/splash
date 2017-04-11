@@ -1,6 +1,10 @@
 (function($) {
   'use strict';
 
+  if (window.geolocation === 'USA') {
+    $('#bubbleUSA').removeClass('is-hidden');
+  }
+
   // link membership boxes
   $('.full-bg-flex').click(function() {
     ga('send', 'event', 'main_flex', 'click');
@@ -149,5 +153,32 @@
   }
 
   ajaxMailChimpForm($('#mce-form'), $('#mce-success-response'));
+
+  $('#closeUSA').click(function() {
+    $('#bubbleUSA').remove();
+  });
+
+  $('#btnUSA').on('click', function(e) {
+    e.preventDefault();
+    var data = {
+      email: $('#emailUSA').val(),
+      investor: $('#radioUSA1:checked').length > 0,
+      startup: $('#radioUSA2:checked').length > 0,
+      other: $('#radioUSA3:checked').length > 0,
+    };
+    $.ajax({
+      url: 'https://hooks.zapier.com/hooks/catch/820959/15w8sw/',
+      type: 'POST',
+      dataType: 'json',
+      data: data,
+      success: function() {
+        $('#btnUSA').remove();
+        $('#thanksUSA').removeClass('is-hidden');
+        setTimeout(function(){
+          $('#bubbleUSA').remove();
+        }, 1500);
+      }
+    })
+  });
 
 })(jQuery);
